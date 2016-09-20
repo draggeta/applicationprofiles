@@ -376,7 +376,12 @@ elseif (Test-Path "$env:SystemDrive\Python34") {
 
 }
 
-if (Test-Path "${env:ProgramFiles(x86)}\Vim\vim74\vim.exe") {
+if (Test-Path "${env:ProgramFiles(x86)}\Vim\vim80\") {
+    
+    Set-Alias Vim "${env:ProgramFiles(x86)}\Vim\vim80\vim.exe"
+
+}
+elseif (Test-Path "${env:ProgramFiles(x86)}\Vim\vim74\") {
     
     Set-Alias Vim "${env:ProgramFiles(x86)}\Vim\vim74\vim.exe"
 
