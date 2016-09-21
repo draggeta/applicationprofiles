@@ -4,11 +4,41 @@
 
         // When opening a file, `editor.tabSize` and `editor.insertSpaces` will be detected based on the file contents.
         "editor.detectIndentation": true,
+
+        // The number of spaces a tab is equal to. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
+        "editor.tabSize": 4,
+
+        // Insert spaces when pressing Tab. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
+        "editor.insertSpaces": true,
+
+        // Controls whether the editor should render indent guides
+        "editor.renderIndentGuides": true,
     
     // Window
 
         // When enabled, will open files in a new window instead of reusing an existing instance.
         "window.openFilesInNewWindow": false,
+
         // Controls if a window should restore to full screen mode if it was exited in full screen mode.
-        "window.restoreFullscreen": true
+        "window.restoreFullscreen": true,
+    
+    // Files
+
+        // Controls auto save of dirty files. Accepted values:  "off", "afterDelay", "onFocusChange" (editor loses focus), "onWindowChange" (window loses focus). If set to "afterDelay", you can configure the delay in "files.autoSaveDelay".
+        "files.autoSave": "onFocusChange",
+
+    // Extensions
+
+        // Automatically update extensions
+        "extensions.autoUpdate": true,
+    
+    // Integrated Terminal
+
+        // The path of the shell that the terminal uses on Windows. When using shells shipped with Windows (cmd, PowerShell or Bash on Ubuntu), prefer C:\Windows\sysnative over C:\Windows\System32 to use the 64-bit versions.
+        "terminal.integrated.shell.windows": "C:\\Windows\\sysnative\\WindowsPowerShell\\v1.0\\powershell.exe",
+
+    // Python Configuration
+
+        // Path to Python, you can use a custom version of Python by modifying this setting to include the full path.
+        "python.pythonPath": "C:\\python27\\python.exe"
 }
