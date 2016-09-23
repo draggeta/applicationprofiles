@@ -19,12 +19,11 @@ Right now, it contains the following applications:
 		* Lock session on switch
 		* Lock session on suspend
 	* Password generation profiles
-	| Characters | Character set range|
-	| --- | --- | 
-	| 16 | alphanumeric |
-	| 24 | alphanumeric/special |
-	| 32 | alphanumeric/special/brackets |
-	| 64 | alphanumeric/special/brackets/high ansi | 
-	| 128 | alphanumeric/special/brackets/high ansi/space | 
-	| 256 | alphanumeric/special/brackets/high ansi/space/user entropy |
-	
+| Characters | Character set range|
+| --- | --- | 
+| 16 | alphanumeric |
+| 24 | alphanumeric/special |
+| 32 | alphanumeric/special/brackets |
+| 64 | alphanumeric/special/brackets/high ansi | 
+| 128 | alphanumeric/special/brackets/high ansi/space | 
+| 256 | alphanumeric/special/brackets/high ansi/space/user entropy |	
