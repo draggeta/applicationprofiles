@@ -21,7 +21,7 @@ Right now, it contains the following applications:
 	* Password generation profiles
 
 | Characters | Character set range|
-| --- | --- | 
+| :---: | :--- | 
 | 16 | alphanumeric |
 | 24 | alphanumeric/special |
 | 32 | alphanumeric/special/brackets |
