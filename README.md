@@ -19,6 +19,7 @@ Right now, it contains the following applications:
 		* Lock session on switch
 		* Lock session on suspend
 	* Password generation profiles
+
 | Characters | Character set range|
 | --- | --- | 
 | 16 | alphanumeric |
