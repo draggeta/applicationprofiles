@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Meta>
+		<PreferUserConfiguration>false</PreferUserConfiguration>
+		<OmitItemsWithDefaultValues>true</OmitItemsWithDefaultValues>
+	</Meta>
+	<Application>
+		<LastUpdateCheck></LastUpdateCheck>
+		<LastUsedFile>
+			<Path />
+			<CredProtMode>Obf</CredProtMode>
+			<CredSaveMode>NoSave</CredSaveMode>
+		</LastUsedFile>
+		<MostRecentlyUsed>
+			<MaxItemCount>12</MaxItemCount>
+			<Items />
+		</MostRecentlyUsed>
+		<WorkingDirectories />
+		<Start>
+			<CheckForUpdate>true</CheckForUpdate>
+			<CheckForUpdateConfigured>true</CheckForUpdateConfigured>
+		</Start>
+		<FileOpening />
+		<FileClosing />
+		<TriggerSystem>
+			<Triggers />
+		</TriggerSystem>
+	</Application>
+	<Logging />
+	<Security>
+		<WorkspaceLocking>
+			<LockOnSessionSwitch>true</LockOnSessionSwitch>
+			<LockOnSuspend>true</LockOnSuspend>
+			<LockAfterTime>0</LockAfterTime>
+			<LockAfterGlobalTime>0</LockAfterGlobalTime>
+		</WorkspaceLocking>
+		<Policy />
+		<MasterPassword>
+			<MinimumLength>0</MinimumLength>
+			<MinimumQuality>0</MinimumQuality>
+		</MasterPassword>
+		<MasterKeyOnSecureDesktop>true</MasterKeyOnSecureDesktop>
+	</Security>
+	<Native />
+	<PasswordGenerator>
+		<UserProfiles>
+			<Profile>
+				<Name>16 - alphanumeric</Name>
+				<GeneratorType>CharSet</GeneratorType>
+				<Length>16</Length>
+				<CharSetRanges>ULD_______</CharSetRanges>
+				<Pattern>h{10}</Pattern>
+			</Profile>
+			<Profile>
+				<Name>24 - alphanumeric/special</Name>
+				<GeneratorType>CharSet</GeneratorType>
+				<Length>24</Length>
+				<CharSetRanges>ULDS_mu___</CharSetRanges>
+				<Pattern>h{10}</Pattern>
+			</Profile>
+			<Profile>
+				<Name>32 - alphanumeric/special/brackets</Name>
+				<GeneratorType>CharSet</GeneratorType>
+				<Length>32</Length>
+				<CharSetRanges>ULDS_mu_B_</CharSetRanges>
+				<Pattern>h{10}</Pattern>
+			</Profile>
+			<Profile>
+				<Name>64 - alphanumeric/special/brackets/high ansi</Name>
+				<GeneratorType>CharSet</GeneratorType>
+				<Length>64</Length>
+				<CharSetRanges>ULDS_mu_BH</CharSetRanges>
+				<Pattern>h{10}</Pattern>
+			</Profile>
+			<Profile>
+				<Name>128 - alphanumeric/special/brackets/high ansi/space</Name>
+				<GeneratorType>CharSet</GeneratorType>
+				<Length>128</Length>
+				<CharSetRanges>ULDS_musBH</CharSetRanges>
+				<Pattern>h{10}</Pattern>
+			</Profile>
+			<Profile>
+				<Name>256 - alphanumeric/special/brackets/high ansi/space/entropy</Name>
+				<GeneratorType>CharSet</GeneratorType>
+				<CollectUserEntropy>true</CollectUserEntropy>
+				<Length>256</Length>
+				<CharSetRanges>ULDS_musBH</CharSetRanges>
+				<Pattern>h{10}</Pattern>
+			</Profile>
+		</UserProfiles>
+	</PasswordGenerator>
+	<Defaults>
+		<OptionsTabIndex>0</OptionsTabIndex>
+		<SearchParameters>
+			<ComparisonMode>InvariantCultureIgnoreCase</ComparisonMode>
+		</SearchParameters>
+		<KeySources />
+	</Defaults>
+	<Custom />
+</Configuration>
