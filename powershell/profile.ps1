@@ -363,6 +363,7 @@ if ($Host.Name -eq 'ConsoleHost') {
 
 }
 
+# Set the Python Path
 if (Test-Path "$env:SystemDrive\Python27\") {
 
     Set-Alias Python "$env:SystemDrive\Python27\python.exe"
@@ -376,13 +377,12 @@ elseif (Test-Path "$env:SystemDrive\Python34") {
 
 }
 
-if (Test-Path "${env:ProgramFiles(x86)}\Vim\vim80\") {
-    
-    Set-Alias Vim "${env:ProgramFiles(x86)}\Vim\vim80\vim.exe"
-
-}
-elseif (Test-Path "${env:ProgramFiles(x86)}\Vim\vim74\") {
+# Set the Vim path
+if (Test-Path "${env:ProgramFiles(x86)}\Vim\vim74\vim.exe") {
     
     Set-Alias Vim "${env:ProgramFiles(x86)}\Vim\vim74\vim.exe"
 
 }
+
+# Load posh-git example profile
+. "$env:PROGRAMFILES\WindowsPowerShell\Modules\posh-git\0.6.1.20160330\profile.example.ps1"
