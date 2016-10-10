@@ -4,11 +4,14 @@ Just a few settings for some of my more used applications.
 Right now, it contains the following applications:
 
 * __PowerShell__
-	* PSReadline
+	* PSReadline module
+	* posh-git module
 	* Vim alias
 	* Python alias
+
 * __Visual Studio Code__
 	* User settings
+	
 * __KeePass__
 	* Application settings
 		* Obfuscate password
