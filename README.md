@@ -8,10 +8,8 @@ Right now, it contains the following applications:
 	* posh-git module
 	* Vim alias
 	* Python alias
-
 * __Visual Studio Code__
 	* User settings
-	
 * __KeePass__
 	* Application settings
 		* Obfuscate password
