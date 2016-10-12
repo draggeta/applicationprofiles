@@ -11,6 +11,9 @@
         // Insert spaces when pressing Tab. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
         "editor.insertSpaces": true,
 
+        // Format a file on save. A formatter must be available, the file must not be auto-saved, and editor must not be shutting down.
+        "editor.formatOnSave": false,
+
         // Controls whether the editor should render indent guides
         "editor.renderIndentGuides": true,
     
