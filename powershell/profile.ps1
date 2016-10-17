@@ -378,10 +378,16 @@ elseif (Test-Path "$env:SystemDrive\Python34") {
 }
 
 # Set the Vim path
-if (Test-Path "${env:ProgramFiles(x86)}\Vim\vim74\vim.exe") {
-    
-    Set-Alias Vim "${env:ProgramFiles(x86)}\Vim\vim74\vim.exe"
+if (Test-Path "${env:ProgramFiles(x86)}\Vim\vim74\") {
+    $env:Path += ";${env:ProgramFiles(x86)}\Vim\vim74\"
+}
+elseif (Test-Path "${env:ProgramFiles(x86)}\Vim\vim80\") {
+    $env:Path += ";${env:ProgramFiles(x86)}\Vim\vim80\"
+}
 
+# Set the SSH path
+if (Test-Path "$env:ProgramFiles\Git\usr\bin") {
+    $env:Path += ";$env:ProgramFiles\Git\usr\bin"
 }
 
 # Load posh-git example profile
