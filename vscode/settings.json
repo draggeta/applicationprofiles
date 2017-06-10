@@ -11,37 +11,80 @@
         // Insert spaces when pressing Tab. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
         "editor.insertSpaces": true,
 
-        // Format a file on save. A formatter must be available, the file must not be auto-saved, and editor must not be shutting down.
-        "editor.formatOnSave": false,
+        // Controls if the minimap is shown
+        "editor.minimap.enabled": true,
+
+        // Controls if the editor should automatically format the line after typing
+        //"editor.formatOnType": true,
+
+        // Controls if the editor should automatically format the pasted content. A formatter must be available and the formatter should be able to format a range in a document.
+        //"editor.formatOnPaste": true,
 
         // Controls whether the editor should render indent guides
         "editor.renderIndentGuides": true,
-    
-    // Window
 
-        // When enabled, will open files in a new window instead of reusing an existing instance.
-        "window.openFilesInNewWindow": false,
+    // Window
 
         // Controls if a window should restore to full screen mode if it was exited in full screen mode.
         "window.restoreFullscreen": true,
-    
+
+        // Adjust the zoom level of the window. The original size is 0 and each increment above (e.g. 1) or below (e.g. -1) represents zooming 20% larger or smaller. You can also enter decimals to adjust the zoom level with a finer granularity.
+        "window.zoomLevel": 0,
+
     // Files
 
         // Controls auto save of dirty files. Accepted values:  "off", "afterDelay", "onFocusChange" (editor loses focus), "onWindowChange" (window loses focus). If set to "afterDelay", you can configure the delay in "files.autoSaveDelay".
         "files.autoSave": "onFocusChange",
 
+        // When enabled, will trim trailing whitespace when saving a file.
+        "files.trimTrailingWhitespace": true,
+
     // Extensions
 
         // Automatically update extensions
         "extensions.autoUpdate": true,
-    
+
     // Integrated Terminal
 
-        // The path of the shell that the terminal uses on Windows. When using shells shipped with Windows (cmd, PowerShell or Bash on Ubuntu), prefer C:\Windows\sysnative over C:\Windows\System32 to use the 64-bit versions.
-        "terminal.integrated.shell.windows": "C:\\Windows\\sysnative\\WindowsPowerShell\\v1.0\\powershell.exe",
+        // Controls whether the terminal cursor blinks.
+        "terminal.integrated.cursorBlinking": true,
 
-    // Python Configuration
+    // Terraform
 
-        // Path to Python, you can use a custom version of Python by modifying this setting to include the full path.
-        "python.pythonPath": "C:\\python27\\python.exe"
-}
+        // Automatically format Terraform HCL files
+        "terraform.formatOnSave": true,
+
+    // Git
+
+        // Confirm before synchronizing git repositories
+        "git.confirmSync": false,
+
+    // vscode-icons configuration
+
+        // If set to true, the new version message won't be shown anymore.
+        "vsicons.dontShowNewVersionMessage": true,
+
+    // Code Settings Sync Configuration Settings
+
+        // Github GIST ID for Settings Sync.
+        "sync.gist": "de31424382b355d4e2558d9a31ba8844",
+
+        // Settings Sync last upload date. Set it as empty if you want to manully hit download.
+        "sync.lastUpload": "2017-06-10T22:38:28.044Z",
+
+        // Settings Sync last download date. Set it as empty if you want to manully hit download.
+        "sync.lastDownload": "2017-06-10T22:33:20.014Z",
+
+        // Set it true to Auto Download the settings on code start. [Code Restart Required]
+        "sync.autoDownload": true,
+
+        // Set it true to Auto Upload on the settings change. [Code Restart Required]
+        "sync.autoUpload": true,
+
+        "workbench.colorTheme": "PowerShell ISE",
+        "sync.forceDownload": false,
+        "sync.anonymousGist": false,
+        "sync.host": "",
+        "sync.pathPrefix": "",
+        "sync.quietSync": false
+    }
