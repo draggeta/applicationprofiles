@@ -14,14 +14,15 @@
         // Controls if the minimap is shown
         "editor.minimap.enabled": true,
 
-        // Controls if the editor should automatically format the line after typing
-        //"editor.formatOnType": true,
-
-        // Controls if the editor should automatically format the pasted content. A formatter must be available and the formatter should be able to format a range in a document.
-        //"editor.formatOnPaste": true,
+        // Columns at which to show vertical rulers
+        "editor.rulers": [ 120 ],
 
         // Controls whether the editor should render indent guides
         "editor.renderIndentGuides": true,
+
+    // Workbench
+        // Specifies the color theme used in the workbench.
+        "workbench.colorTheme": "PowerShell ISE",
 
     // Window
 
@@ -36,18 +37,47 @@
         // Controls auto save of dirty files. Accepted values:  "off", "afterDelay", "onFocusChange" (editor loses focus), "onWindowChange" (window loses focus). If set to "afterDelay", you can configure the delay in "files.autoSaveDelay".
         "files.autoSave": "onFocusChange",
 
+        // When enabled, insert a final new line at the end of the file when saving it.
+        "files.insertFinalNewline": true,
+
+          // When enabled, will trim all new lines after the final new line at the end of the file when saving it.
+        "files.trimFinalNewlines": true,
+
         // When enabled, will trim trailing whitespace when saving a file.
         "files.trimTrailingWhitespace": true,
-
-    // Extensions
-
-        // Automatically update extensions
-        "extensions.autoUpdate": true,
 
     // Integrated Terminal
 
         // Controls whether the terminal cursor blinks.
         "terminal.integrated.cursorBlinking": true,
+
+    // Code Settings Sync Configuration Settings
+
+        // Github GIST ID for Settings Sync.
+        "sync.gist": "de31424382b355d4e2558d9a31ba8844",
+
+        // Settings Sync last upload date. Set it as empty if you want to manully hit download.
+        "sync.lastUpload": "",
+
+        // Settings Sync last download date. Set it as empty if you want to manully hit download.
+        "sync.lastDownload": "2017-10-27T15:00:58.470Z",
+
+        // Set it true to Auto Download the settings on code start. [Code Restart Required]
+        "sync.autoDownload": true,
+
+        // Set it true to Auto Upload on the settings change. [Code Restart Required]
+        "sync.autoUpload": true,
+
+        // When set to true, will show the result in status bar instead of summary page.
+        "sync.quietSync": true,
+
+    // PowerShell Configuration
+
+        // Sets the codeformatting options to follow the given indent style in a way that is compatible with PowerShell syntax. For more information about the brace styles please refer to https://github.com/PoshCode/PowerShellPracticeAndStyle/issues/81.
+        "powershell.codeFormatting.preset": "OTBS",
+
+        // Shows the integrated console when the PowerShell extension is initialized.
+        "powershell.integratedConsole.showOnStartup": false,
 
     // Terraform
 
@@ -59,32 +89,6 @@
         // Confirm before synchronizing git repositories
         "git.confirmSync": false,
 
-    // vscode-icons configuration
-
-        // If set to true, the new version message won't be shown anymore.
-        "vsicons.dontShowNewVersionMessage": true,
-
-    // Code Settings Sync Configuration Settings
-
-        // Github GIST ID for Settings Sync.
-        "sync.gist": "de31424382b355d4e2558d9a31ba8844",
-
-        // Settings Sync last upload date. Set it as empty if you want to manully hit download.
-        "sync.lastUpload": "2017-06-10T22:38:28.044Z",
-
-        // Settings Sync last download date. Set it as empty if you want to manully hit download.
-        "sync.lastDownload": "2017-06-10T22:33:20.014Z",
-
-        // Set it true to Auto Download the settings on code start. [Code Restart Required]
-        "sync.autoDownload": true,
-
-        // Set it true to Auto Upload on the settings change. [Code Restart Required]
-        "sync.autoUpload": true,
-
-        "workbench.colorTheme": "PowerShell ISE",
-        "sync.forceDownload": false,
-        "sync.anonymousGist": false,
-        "sync.host": "",
-        "sync.pathPrefix": "",
-        "sync.quietSync": false
-    }
+        // Commit all changes when there are no staged changes.
+        "git.enableSmartCommit": true,
+}
