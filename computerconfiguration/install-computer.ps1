@@ -1,10 +1,9 @@
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 
-# Trust the PowerShell Gallery
-$policy = Get-PSRepository -Name "PSGallery" | Select-Object -ExpandProperty "InstallationPolicy"
-if ($policy -ne "Trusted") {
-    Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
-}
+# Set time configuration
+w32tm /config /update /manualpeerlist:nl.pool.ntp.org
+Restart-Service w32time
+w32tm /resync /nowait
 
 # Remove unneeded/unsecure Windows features
 $removedOptionalFeatureList = @(
@@ -13,7 +12,6 @@ $removedOptionalFeatureList = @(
     'MicrosoftWindowsPowerShellV2Root'
     'WindowsMediaPlayer'
 )
-
 $enabledOptionalFeatureList = @(
     'Microsoft-Hyper-V-All'
     'Containers'
@@ -58,6 +56,12 @@ $softwareList = @(
 )
 choco install -y openssh -params "/SSHAgentFeature /SSHServerFeature"
 choco install -y $softwareList
+
+# Trust the PowerShell Gallery
+$policy = Get-PSRepository -Name "PSGallery" | Select-Object -ExpandProperty "InstallationPolicy"
+if ($policy -ne "Trusted") {
+    Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
+}
 
 # Install often used PowerShell modules
 $moduleList = @(
