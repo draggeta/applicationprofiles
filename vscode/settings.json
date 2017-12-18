@@ -21,6 +21,7 @@
         "editor.renderIndentGuides": true,
 
     // Workbench
+
         // Specifies the color theme used in the workbench.
         "workbench.colorTheme": "PowerShell ISE",
 
@@ -53,14 +54,29 @@
 
     // Code Settings Sync Configuration Settings
 
+        // Set it to your GitHub Enterprise host if you want to use GHE.
+        "sync.host": "",
+
+        // Set it to your GitHub Enterprise api prefix if you want to use GHE. Normally '/api/v3'. Only used when host is set.
+        "sync.pathPrefix": "",
+
+        // Set it to true if you want to create or download from Anonymous Gist. Extension will not ask for GitHub token.
+        "sync.anonymousGist": false,
+
+        // Ask gist name upon creating. Helps you to identify the gist if you have multiple gists.
+        "sync.askGistName": false,
+
         // Github GIST ID for Settings Sync.
         "sync.gist": "de31424382b355d4e2558d9a31ba8844",
 
         // Settings Sync last upload date. Set it as empty if you want to manully hit download.
-        "sync.lastUpload": "",
+        "sync.lastUpload": "2017-12-18T01:24:03.863Z",
 
         // Settings Sync last download date. Set it as empty if you want to manully hit download.
         "sync.lastDownload": "2017-10-27T15:00:58.470Z",
+
+        // Set it to true if you want to download the settings even when you have latest settings.
+        "sync.forceDownload": false,
 
         // Set it true to Auto Download the settings on code start. [Code Restart Required]
         "sync.autoDownload": true,
