@@ -16,8 +16,9 @@ $enabledOptionalFeatureList = @(
     'Microsoft-Hyper-V-All'
     'Containers'
     'Microsoft-Windows-Subsystem-Linux'
+    'Windows-Defender-ApplicationGuard'
 )
-Disable-WindowsOptionalFeature -Online -FeatureName $removedOptionalFeatureList-NoRestart
+Disable-WindowsOptionalFeature -Online -FeatureName $removedOptionalFeatureList -NoRestart
 Enable-WindowsOptionalFeature -Online -FeatureName $enabledOptionalFeatureList -NoRestart
 
 # Create AppModelUnlock if it doesn't exist, required for enabling Developer Mode
