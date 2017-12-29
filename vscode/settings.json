@@ -23,7 +23,7 @@
     // Workbench
 
         // Specifies the color theme used in the workbench.
-        "workbench.colorTheme": "PowerShell ISE",
+        "workbench.colorTheme": "Visual Studio Dark",
 
     // Window
 
@@ -32,6 +32,13 @@
 
         // Adjust the zoom level of the window. The original size is 0 and each increment above (e.g. 1) or below (e.g. -1) represents zooming 20% larger or smaller. You can also enter decimals to adjust the zoom level with a finer granularity.
         "window.zoomLevel": 0,
+
+    // Markdown
+
+        // Disable the removal of trailing whitespaces, otherwise there are no newlines.
+        "[markdown]": {
+            "files.trimTrailingWhitespace": false,
+        },
 
     // Files
 
@@ -52,6 +59,9 @@
         // Controls whether the terminal cursor blinks.
         "terminal.integrated.cursorBlinking": true,
 
+        // The path of the shell that the terminal uses on Windows. When using shells shipped with Windows (cmd, PowerShell or Bash on Ubuntu).
+        "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+
     // Code Settings Sync Configuration Settings
 
         // Set it to your GitHub Enterprise host if you want to use GHE.
@@ -70,7 +80,7 @@
         "sync.gist": "de31424382b355d4e2558d9a31ba8844",
 
         // Settings Sync last upload date. Set it as empty if you want to manully hit download.
-        "sync.lastUpload": "2017-12-18T01:24:03.863Z",
+        "sync.lastUpload": "2017-12-18T01:38:51.147Z",
 
         // Settings Sync last download date. Set it as empty if you want to manully hit download.
         "sync.lastDownload": "2017-10-27T15:00:58.470Z",
@@ -102,9 +112,13 @@
 
     // Git
 
+        // Whether auto fetching is enabled
+        "git.autofetch": true,
+
         // Confirm before synchronizing git repositories
         "git.confirmSync": false,
 
         // Commit all changes when there are no staged changes.
         "git.enableSmartCommit": true,
+
 }
