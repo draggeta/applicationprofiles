@@ -54,6 +54,7 @@ $softwareList = @(
     'vmwarevsphereclient'
     'rdcman'
     'k-litecodecpackfull'
+    'microsoftazurestorageexplorer'
 )
 choco install -y openssh -params "/SSHAgentFeature /SSHServerFeature"
 choco install -y $softwareList
