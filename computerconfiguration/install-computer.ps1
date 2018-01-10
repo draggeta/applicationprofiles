@@ -37,6 +37,7 @@ Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://cho
 # Install software
 $softwareList = @(
     'git'
+    'openssl.light'
     'docker-for-windows'
     'terraform'
     'visualstudiocode'
