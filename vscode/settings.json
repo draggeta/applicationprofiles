@@ -105,10 +105,8 @@
         // Shows the integrated console when the PowerShell extension is initialized.
         "powershell.integratedConsole.showOnStartup": false,
 
-    // Terraform
-
-        // Automatically format Terraform HCL files
-        "terraform.formatOnSave": true,
+        // Specifies the full path to a PowerShell executable. Changes the installation of PowerShell used for language and debugging services.
+        "powershell.powerShellExePath": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
 
     // Git
 
@@ -119,6 +117,6 @@
         "git.confirmSync": false,
 
         // Commit all changes when there are no staged changes.
-        "git.enableSmartCommit": true,
+        "git.enableSmartCommit": true
 
 }
