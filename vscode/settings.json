@@ -2,6 +2,9 @@
 {
     // Editor
 
+        // Controls if the diff editor shows changes in leading or trailing whitespace as diffs
+        "diffEditor.ignoreTrimWhitespace": false,
+
         // When opening a file, `editor.tabSize` and `editor.insertSpaces` will be detected based on the file contents.
         "editor.detectIndentation": true,
 
@@ -64,18 +67,6 @@
 
     // Code Settings Sync Configuration Settings
 
-        // Set it to your GitHub Enterprise host if you want to use GHE.
-        "sync.host": "",
-
-        // Set it to your GitHub Enterprise api prefix if you want to use GHE. Normally '/api/v3'. Only used when host is set.
-        "sync.pathPrefix": "",
-
-        // Set it to true if you want to create or download from Anonymous Gist. Extension will not ask for GitHub token.
-        "sync.anonymousGist": false,
-
-        // Ask gist name upon creating. Helps you to identify the gist if you have multiple gists.
-        "sync.askGistName": false,
-
         // Github GIST ID for Settings Sync.
         "sync.gist": "de31424382b355d4e2558d9a31ba8844",
 
@@ -117,6 +108,22 @@
         "git.confirmSync": false,
 
         // Commit all changes when there are no staged changes.
-        "git.enableSmartCommit": true
+        "git.enableSmartCommit": true,
 
-}
+    // GitLens
+
+        // Specifies which messages should be suppressed
+        "gitlens.advanced.messages": {
+            "suppressCommitHasNoPreviousCommitWarning": false,
+            "suppressCommitNotFoundWarning": false,
+            "suppressFileNotUnderSourceControlWarning": false,
+            "suppressGitVersionWarning": false,
+            "suppressLineUncommittedWarning": false,
+            "suppressNoRepositoryWarning": false,
+            "suppressResultsExplorerNotice": true,
+            "suppressShowKeyBindingsNotice": true
+        },
+
+        // Specifies the keymap to use for GitLens shortcut keys
+        "gitlens.keymap": "chorded"
+    }
