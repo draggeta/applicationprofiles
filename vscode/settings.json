@@ -65,6 +65,14 @@
         // The path of the shell that the terminal uses on Windows. When using shells shipped with Windows (cmd, PowerShell or Bash on Ubuntu).
         "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
 
+    // Go configuration
+
+        // Feature level setting to enable/disable code lens for references and run/debug tests
+        "go.enableCodeLens": {
+          "references": true,
+          "runtest": true
+        },
+
     // Code Settings Sync Configuration Settings
 
         // Github GIST ID for Settings Sync.
