@@ -30,6 +30,17 @@ if (-not(Test-Path -Path $RegistryKeyPath)) {
 # Add registry value to enable Developer Mode
 New-ItemProperty -Path $RegistryKeyPath -Name AllowDevelopmentWithoutDevLicense -PropertyType DWORD -Value 1
 
+# Set Explorer settings
+$explorerSettings = @{
+    Hidden          = 1     # Show hidden items
+    HideFileExt     = 0     # Show file extensions
+    SeparateProcess = 1     # Open Explorer windows in separate process
+}
+$explorerRegistryKeyPath = "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced"
+foreach ($item in $explorerSettings.GetEnumerator()) {
+    Set-ItemProperty -Path $explorerRegistryKeyPath -Name $item.Key -Value $item.Value
+}
+
 # Install Chocolatey
 Set-ExecutionPolicy Bypass -Scope Process -Force
 Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
@@ -52,10 +63,11 @@ $softwareList = @(
     'python'
     'python2'
     'wireshark'
-    'vmwarevsphereclient'
     'rdcman'
     'k-litecodecpackfull'
     'microsoftazurestorageexplorer'
+    'terraform'
+    'vault'
 )
 choco install -y openssh -params "/SSHAgentFeature /SSHServerFeature"
 choco install -y $softwareList
