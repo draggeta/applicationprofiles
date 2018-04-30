@@ -21,6 +21,10 @@ $enabledOptionalFeatureList = @(
 Disable-WindowsOptionalFeature -Online -FeatureName $removedOptionalFeatureList -NoRestart
 Enable-WindowsOptionalFeature -Online -FeatureName $enabledOptionalFeatureList -NoRestart
 
+# Workaround for Docker for Windows slow network connectivity issues. By disabling RSC, packets aren't dropped anymore
+# See: https://github.com/docker/for-win/issues/698#issuecomment-314902326
+Get-NetAdapterRsc | Disable-NetAdapterRsc
+
 # Create AppModelUnlock if it doesn't exist, required for enabling Developer Mode
 $RegistryKeyPath = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock"
 if (-not(Test-Path -Path $RegistryKeyPath)) {
@@ -69,7 +73,7 @@ $softwareList = @(
     'terraform'
     'vault'
 )
-choco install -y openssh -params "/SSHAgentFeature /SSHServerFeature"
+#choco install -y openssh -params "/SSHAgentFeature /SSHServerFeature"
 choco install -y $softwareList
 
 # Trust the PowerShell Gallery
