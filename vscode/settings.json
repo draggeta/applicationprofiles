@@ -51,13 +51,16 @@
         // When enabled, insert a final new line at the end of the file when saving it.
         "files.insertFinalNewline": true,
 
-          // When enabled, will trim all new lines after the final new line at the end of the file when saving it.
+        // When enabled, will trim all new lines after the final new line at the end of the file when saving it.
         "files.trimFinalNewlines": true,
 
         // When enabled, will trim trailing whitespace when saving a file.
         "files.trimTrailingWhitespace": true,
 
     // Integrated Terminal
+
+        // Customizes what kind of terminal to launch.
+        "terminal.explorerKind": "integrated",
 
         // Controls whether the terminal cursor blinks.
         "terminal.integrated.cursorBlinking": true,
@@ -105,7 +108,7 @@
         "powershell.integratedConsole.showOnStartup": false,
 
         // Specifies the full path to a PowerShell executable. Changes the installation of PowerShell used for language and debugging services.
-        "powershell.powerShellExePath": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        "powershell.powerShellExePath": "C:\\Program Files\\PowerShell\\6.0.2\\pwsh.exe",
 
     // Git
 
@@ -133,5 +136,6 @@
         },
 
         // Specifies the keymap to use for GitLens shortcut keys
-        "gitlens.keymap": "chorded"
+        "gitlens.keymap": "chorded",
+        "gitlens.historyExplorer.enabled": false
     }
