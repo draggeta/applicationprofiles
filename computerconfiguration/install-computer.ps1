@@ -87,8 +87,13 @@ if ($policy -ne "Trusted") {
 $moduleList = @(
     'AzureRM'
     'AzureAdPreview'
+    'InvokeBuild'
+    'platyPS'
     'Posh-git'
     'PSReadLine'
     'Pester'
 )
 Install-Module -Name $moduleList -SkipPublisherCheck -Force
+
+# Enable Controlled folder access
+Set-MpPreference -EnableControlledFolderAccess Enabled
