@@ -41,7 +41,7 @@
         "workbench.colorTheme": "Material Theme Ocean High Contrast",
 
         // Specifies the icon theme used in the workbench or 'null' to not show any file icons.
-        "workbench.iconTheme": "eq-material-theme-icons-ocean",
+        "workbench.iconTheme": "material-icon-theme",
 
     // Window
 
@@ -139,6 +139,14 @@
         // Specifies the full path to a PowerShell executable. Changes the installation of PowerShell used for language and debugging services.
         "powershell.powerShellExePath": "C:\\Program Files\\PowerShell\\6.0.2\\pwsh.exe",
 
+    // Material Icons
+
+        // Change the color of the folder icons.
+        "material-icon-theme.folders.color": "#26a69a",
+
+        // Change the opacity of the icons.
+        "material-icon-theme.opacity": 0.75,
+
     // Material Theme
 
         // For checking if the command is currently acting
@@ -169,7 +177,10 @@
             "suppressShowKeyBindingsNotice": true
         },
 
+        // Specifies whether to show avatar images instead of status icons in the `GitLens File History` explorer
+        "gitlens.historyExplorer.enabled": false,
+
         // Specifies the keymap to use for GitLens shortcut keys
-        "gitlens.keymap": "chorded",
-        "gitlens.historyExplorer.enabled": false
-}
+        "gitlens.keymap": "chorded"
+
+    }
