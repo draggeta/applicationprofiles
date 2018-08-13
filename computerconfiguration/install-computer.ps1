@@ -57,6 +57,7 @@ $softwareList = @(
     'golang'
     'python'
     'python2'
+    'firacode'
     'firefox'
     'googlechrome'
     '7zip'
