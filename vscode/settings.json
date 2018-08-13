@@ -2,14 +2,17 @@
 {
     // Editor
 
-        // Controls if the diff editor shows changes in leading or trailing whitespace as diffs
-        "diffEditor.ignoreTrimWhitespace": false,
-
         // When opening a file, `editor.tabSize` and `editor.insertSpaces` will be detected based on the file contents.
         "editor.detectIndentation": true,
 
-        // The number of spaces a tab is equal to. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
-        "editor.tabSize": 4,
+        // Controls the font family.
+        "editor.fontFamily": "'Fira Code'",
+
+        // Enables font ligatures
+        "editor.fontLigatures": true,
+
+        // Controls if the diff editor shows changes in leading or trailing whitespace as diffs
+        "diffEditor.ignoreTrimWhitespace": false,
 
         // Insert spaces when pressing Tab. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
         "editor.insertSpaces": true,
@@ -17,16 +20,28 @@
         // Controls if the minimap is shown
         "editor.minimap.enabled": true,
 
+        // Controls whether the editor should render indent guides
+        "editor.renderIndentGuides": true,
+
+        // Controls how the editor should render whitespace characters.
+        //  - none
+        //  - boundary: Render whitespace characters except for single spaces between words.
+        //  - all
+        "editor.renderWhitespace": "all",
+
         // Columns at which to show vertical rulers
         "editor.rulers": [ 120 ],
 
-        // Controls whether the editor should render indent guides
-        "editor.renderIndentGuides": true,
+        // The number of spaces a tab is equal to. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
+        "editor.tabSize": 4,
 
     // Workbench
 
         // Specifies the color theme used in the workbench.
-        "workbench.colorTheme": "Monokai Dimmed",
+        "workbench.colorTheme": "Material Theme Ocean High Contrast",
+
+        // Specifies the icon theme used in the workbench or 'null' to not show any file icons.
+        "workbench.iconTheme": "eq-material-theme-icons-ocean",
 
     // Window
 
@@ -35,13 +50,6 @@
 
         // Adjust the zoom level of the window. The original size is 0 and each increment above (e.g. 1) or below (e.g. -1) represents zooming 20% larger or smaller. You can also enter decimals to adjust the zoom level with a finer granularity.
         "window.zoomLevel": 0,
-
-    // Markdown
-
-        // Disable the removal of trailing whitespaces, otherwise there are no newlines.
-        "[markdown]": {
-            "files.trimTrailingWhitespace": false,
-        },
 
     // Files
 
@@ -57,6 +65,13 @@
         // When enabled, will trim trailing whitespace when saving a file.
         "files.trimTrailingWhitespace": true,
 
+    // Markdown
+
+        // Disable the removal of trailing whitespaces, otherwise there are no newlines.
+        "[markdown]": {
+            "files.trimTrailingWhitespace": false,
+        },
+
     // Integrated Terminal
 
         // Customizes what kind of terminal to launch.
@@ -68,6 +83,20 @@
         // The path of the shell that the terminal uses on Windows. When using shells shipped with Windows (cmd, PowerShell or Bash on Ubuntu).
         "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
 
+    // Breadcrumb Navigation
+
+        // Enable/disable navigation breadcrumbs
+        "breadcrumbs.enabled": true,
+
+    // GitLab Workflow
+
+        // Your GitLab instance URL (default is https://gitlab.com)
+        "gitlab.instanceUrl": "https://code.ogdsoftware.nl",
+
+    //Python
+        "[python]": {
+
+        },
 
     // Go configuration
 
@@ -78,15 +107,6 @@
         },
 
     // Code Settings Sync Configuration Settings
-
-        // Github GIST ID for Settings Sync.
-        "sync.gist": "de31424382b355d4e2558d9a31ba8844",
-
-        // Settings Sync last upload date. Set it as empty if you want to manully hit download.
-        "sync.lastUpload": "2017-12-18T01:38:51.147Z",
-
-        // Settings Sync last download date. Set it as empty if you want to manully hit download.
-        "sync.lastDownload": "2017-10-27T15:00:58.470Z",
 
         // Set it to true if you want to download the settings even when you have latest settings.
         "sync.forceDownload": false,
@@ -100,6 +120,11 @@
         // When set to true, will show the result in status bar instead of summary page.
         "sync.quietSync": true,
 
+    // YAML Support by Red Hat
+
+        // Enable/disable default YAML formatter (requires restart)
+        "yaml.format.enable": true,
+
     // PowerShell Configuration
 
         // Sets the codeformatting options to follow the given indent style in a way that is compatible with PowerShell syntax. For more information about the brace styles please refer to https://github.com/PoshCode/PowerShellPracticeAndStyle/issues/81.
@@ -110,6 +135,11 @@
 
         // Specifies the full path to a PowerShell executable. Changes the installation of PowerShell used for language and debugging services.
         "powershell.powerShellExePath": "C:\\Program Files\\PowerShell\\6.0.2\\pwsh.exe",
+
+    // Material Theme
+
+        // For checking if the command is currently acting
+        "materialTheme.fixIconsRunning": false,
 
     // Git
 
@@ -139,4 +169,4 @@
         // Specifies the keymap to use for GitLens shortcut keys
         "gitlens.keymap": "chorded",
         "gitlens.historyExplorer.enabled": false
-    }
+}
