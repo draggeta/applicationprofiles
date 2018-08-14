@@ -96,5 +96,8 @@ $moduleList = @(
 )
 Install-Module -Name $moduleList -SkipPublisherCheck -Force
 
+# Install often used Python modules
+python.exe -m pip install --upgrade -r requirements.txt
+
 # Enable Controlled folder access
 Set-MpPreference -EnableControlledFolderAccess Enabled

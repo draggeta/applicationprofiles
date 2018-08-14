@@ -1,0 +1,8 @@
+black           # Python formatter
+Jinja2          # Jinja2 filters
+lxml            # XML/HTML tools
+pyang           # Yang model tools
+pycodestyle     # Performs PEP8 validation
+pylint          # Performs PEP8/Analysis validation
+PyYAML          # YAML tools
+yamllint        # YAML linter
