@@ -2,6 +2,9 @@
 {
     // Editor
 
+        // Controls if the diff editor shows changes in leading or trailing whitespace as diffs
+        "diffEditor.ignoreTrimWhitespace": false,
+
         // When opening a file, `editor.tabSize` and `editor.insertSpaces` will be detected based on the file contents.
         "editor.detectIndentation": true,
 
@@ -10,9 +13,6 @@
 
         // Enables font ligatures
         "editor.fontLigatures": true,
-
-        // Controls if the diff editor shows changes in leading or trailing whitespace as diffs
-        "diffEditor.ignoreTrimWhitespace": false,
 
         // Insert spaces when pressing Tab. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
         "editor.insertSpaces": true,
@@ -30,7 +30,7 @@
         "editor.renderWhitespace": "all",
 
         // Columns at which to show vertical rulers
-        "editor.rulers": [ 120 ],
+        "editor.rulers": [ 72, 80, 120 ],
 
         // The number of spaces a tab is equal to. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
         "editor.tabSize": 4,
@@ -38,12 +38,19 @@
     // Workbench
 
         // Specifies the color theme used in the workbench.
-        "workbench.colorTheme": "Material Theme High Contrast",
+        "workbench.colorTheme": "Material Theme Ocean High Contrast",
 
         // Specifies the icon theme used in the workbench or 'null' to not show any file icons.
         "workbench.iconTheme": "material-icon-theme",
 
     // Window
+
+        // Overrides colors from the currently selected color theme.
+        "workbench.colorCustomizations": {
+            "[Material Theme Ocean High Contrast]": {
+                "statusBar.foreground": "#595d68"
+            }
+        },
 
         // Controls if a window should restore to full screen mode if it was exited in full screen mode.
         "window.restoreFullscreen": true,
@@ -93,37 +100,29 @@
 
     // GitLab Workflow
 
-        // Your GitLab instance URL (default is https://gitlab.com)
-        "gitlab.instanceUrl": "https://code.ogdsoftware.nl",
-
     //Python
-        "[python]": {
 
-        },
+        // Provider for formatting. Possible options include 'autopep8', 'black', and 'yapf'.
+        "python.formatting.provider": "black",
+
+        // Whether to lint Python files using pep8
+        "python.linting.pep8Enabled": true,
 
     // Go configuration
 
         // Feature level setting to enable/disable code lens for references and run/debug tests
         "go.enableCodeLens": {
-          "references": true,
-          "runtest": true
+            "references": true,
+            "runtest": true
         },
 
     // Code Settings Sync Configuration Settings
 
-        // Set it to true if you want to download the settings even when you have latest settings.
-        "sync.forceDownload": false,
-
-        // Set it true to Auto Download the settings on code start. [Code Restart Required]
-        "sync.autoDownload": true,
-
-        // Set it true to Auto Upload on the settings change. [Code Restart Required]
-        "sync.autoUpload": true,
-
-        // When set to true, will show the result in status bar instead of summary page.
-        "sync.quietSync": true,
-
     // YAML Support by Red Hat
+
+        "[yaml]": {
+            "editor.tabSize": 2,
+        },
 
         // Enable/disable default YAML formatter (requires restart)
         "yaml.format.enable": true,
@@ -183,4 +182,4 @@
         // Specifies the keymap to use for GitLens shortcut keys
         "gitlens.keymap": "chorded"
 
-    }
+}
