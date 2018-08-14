@@ -69,7 +69,7 @@ $softwareList = @(
     'paint.net'
     'putty'
     'rdcman'
-    'visualstudiocode'
+    'vscode'
     'wireshark'
     'terraform'
     'vagrant'
