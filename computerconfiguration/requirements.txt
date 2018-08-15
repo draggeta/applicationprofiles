@@ -1,8 +1,9 @@
 black           # Python formatter
-Jinja2          # Jinja2 filters
-lxml            # XML/HTML tools
-pyang           # Yang model tools
-pycodestyle     # Performs PEP8 validation
-pylint          # Performs PEP8/Analysis validation
-PyYAML          # YAML tools
+Jinja2          # Jinja2 package
+lxml            # XML/HTML package
+pyang           # Yang model package
+pycodestyle     # Python linter implementing PEP8. Replaces the old pep8 package
+pylint          # Python linter implementing PEP8 and performing static analysis
+PyYAML          # YAML package
+rope            # Python refactoring libary
 yamllint        # YAML linter
