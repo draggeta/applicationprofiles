@@ -90,8 +90,8 @@
         // Controls whether the terminal cursor blinks.
         "terminal.integrated.cursorBlinking": true,
 
-        // The path of the shell that the terminal uses on Windows. When using shells shipped with Windows (cmd, PowerShell or Bash on Ubuntu).
-        "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+        // The path of the shell that the terminal uses on Windows. [Read more about configuring the shell](https://code.visualstudio.com/docs/editor/integrated-terminal#_configuration).
+        "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\6\\pwsh.exe",
 
     // Breadcrumb Navigation
 
@@ -142,7 +142,7 @@
         "powershell.integratedConsole.showOnStartup": false,
 
         // Specifies the full path to a PowerShell executable. Changes the installation of PowerShell used for language and debugging services.
-        "powershell.powerShellExePath": "C:\\Program Files\\PowerShell\\6.0.2\\pwsh.exe",
+        "powershell.powerShellExePath": "C:\\Program Files\\PowerShell\\6\\pwsh.exe",
 
     // Material Icons
 
@@ -186,6 +186,31 @@
         "gitlens.historyExplorer.enabled": false,
 
         // Specifies the keymap to use for GitLens shortcut keys
-        "gitlens.keymap": "chorded"
+        "gitlens.keymap": "chorded",
 
+    // Shell Launcher
+
+        // A list of shell configurations for Windows
+        "shellLauncher.shells.windows": [
+            {
+                "shell": "C:\\Program Files\\PowerShell\\6\\pwsh.exe",
+                "label": "PowerShell Core"
+            },
+            {
+                "shell": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "label": "PowerShell"
+            },
+            {
+                "shell": "C:\\Windows\\System32\\cmd.exe",
+                "label": "cmd"
+            },
+            {
+                "shell": "C:\\Windows\\System32\\bash.exe",
+                "label": "WSL Bash"
+            },
+            {
+                "shell": "C:\\Users\\tony.fortesramos\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
+                "label": "Python"
+            }
+        ]
 }
