@@ -8,6 +8,7 @@ Right now, it contains the following applications:
 	* posh-git module
 * __Visual Studio Code__
 	* User settings backup
+	* Key bindings
 * __Computer Configuration__
 	* Software and settings to install
 * __KeePass__
