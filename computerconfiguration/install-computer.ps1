@@ -13,13 +13,26 @@ $removedOptionalFeatureList = @(
     'WindowsMediaPlayer'
 )
 $enabledOptionalFeatureList = @(
-    'Microsoft-Hyper-V-All'
     'Containers'
+    'HypervisorPlatform'
+    'Microsoft-Hyper-V-All'
     'Microsoft-Windows-Subsystem-Linux'
     'Windows-Defender-ApplicationGuard'
 )
 Disable-WindowsOptionalFeature -Online -FeatureName $removedOptionalFeatureList -NoRestart
 Enable-WindowsOptionalFeature -Online -FeatureName $enabledOptionalFeatureList -NoRestart
+
+$removedOptionalFeatureList = @(
+    'Media.WindowsMediaPlayer~~~~0.0.12.0'
+)
+$enabledCapabilityList = @(
+    'OpenSSH.Client~~~~0.0.1.0'
+    'OpenSSH.Server~~~~0.0.1.0'
+)
+
+Remove-WindowsCapability -Online -Name $removedCapabilityList -NoRestart
+Add-WindowsCapability -Online -Name $enabledCapabilityList -NoRestart
+
 
 # Workaround for Docker for Windows slow network connectivity issues. By disabling RSC, packets aren't dropped anymore
 # See: https://github.com/docker/for-win/issues/698#issuecomment-314902326
@@ -51,29 +64,30 @@ Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://cho
 
 # Install software
 $softwareList = @(
-    'git'
+    '7zip'
+    'azure-cli'
     'docker-for-windows'
-    'openssl.light'
+    'git'
+    'git-credential-manager-for-windows'
     'golang'
-    'python'
-    'python2'
     'firacode'
     'firefox'
     'googlechrome'
-    '7zip'
+    'jabra-direct'
     'k-litecodecpackfull'
     'keepass'
     'microsoft-teams'
     'microsoftazurestorageexplorer'
+    'mremoteng'
+    # 'openssl.light'
     'notepadplusplus'
     'paint.net'
     'putty'
-    'rdcman'
+    'python'
+    'terraform'
+    'vault'
     'vscode'
     'wireshark'
-    'terraform'
-    'vagrant'
-    'vault'
 )
 #choco install -y openssh -params "/SSHAgentFeature /SSHServerFeature"
 choco install -y $softwareList
@@ -86,8 +100,7 @@ if ($policy -ne "Trusted") {
 
 # Install often used PowerShell modules
 $moduleList = @(
-    'AzureRM'
-    'AzureAdPreview'
+    'Az'
     'InvokeBuild'
     'platyPS'
     'Posh-git'

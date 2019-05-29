@@ -1,0 +1,5 @@
+Jinja2          # Jinja2 package
+lxml            # XML/HTML package
+pyang           # Yang model package
+PyYAML          # YAML package
+yamllint        # YAML linter
