@@ -100,6 +100,9 @@
 
     // GitLab Workflow
 
+        // Your GitLab instance URL (default is https://gitlab.com)
+        "gitlab.instanceUrl": "https://code.ogdsoftware.nl",
+
     //Python
 
         // Provider for formatting. Possible options include 'autopep8', 'black', and 'yapf'.
@@ -122,7 +125,19 @@
             "runtest": true
         },
 
+        // Experimental: Use Go language server from Google or
+        // Sourcegraph for Hover, Definition, Signature Help, Auto
+        // Completion and Formatting features instead of tools like
+        // godef, gocode and goreturns
+        "go.useLanguageServer": true
+
     // Code Settings Sync Configuration Settings
+
+        // Github GIST ID for Settings Sync.
+        "sync.gist": "de31424382b355d4e2558d9wa31ba8844",
+
+        // Set it true to Auto Download the settings on code start. [Code Restart Required]
+        "sync.autoDownload": true,
 
     // YAML Support by Red Hat
 
@@ -132,6 +147,12 @@
 
         // Enable/disable default YAML formatter (requires restart)
         "yaml.format.enable": true,
+
+    // Yang VS Code Extension
+
+        "[yang]": {
+            "editor.tabSize": 2,
+        },
 
     // PowerShell Configuration
 
@@ -188,6 +209,12 @@
         // Specifies the keymap to use for GitLens shortcut keys
         "gitlens.keymap": "chorded",
 
+        // Specifies whether to show the File History view
+        "gitlens.views.fileHistory.enabled": false,
+
+        // Specifies whether to show the Line History view
+        "gitlens.views.lineHistory.enabled": false,
+
     // Shell Launcher
 
         // A list of shell configurations for Windows
@@ -212,5 +239,33 @@
                 "shell": "C:\\Users\\tony.fortesramos\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
                 "label": "Python"
             }
+        ],
+        "cSpell.enabledLanguageIds": [
+            "asciidoc",
+            "c",
+            "cpp",
+            "csharp",
+            "css",
+            "go",
+            "handlebars",
+            "html",
+            "jade",
+            "javascript",
+            "javascriptreact",
+            "json",
+            "latex",
+            "less",
+            "markdown",
+            "php",
+            "plaintext",
+            "pub",
+            "python",
+            "restructuredtext",
+            "rust",
+            "scss",
+            "text",
+            "typescript",
+            "typescriptreact",
+            "yml"
         ]
 }
