@@ -1,4 +1,5 @@
 black           # Python formatter
+pip             # Python package installer
 pycodestyle     # Python linter implementing PEP8. Replaces the old pep8 package
 pylint          # Python linter implementing PEP8 and performing static analysis
 pytest          # Python unit-testing library
