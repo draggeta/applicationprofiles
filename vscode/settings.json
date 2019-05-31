@@ -98,8 +98,6 @@
         // Enable/disable navigation breadcrumbs
         "breadcrumbs.enabled": true,
 
-    // GitLab Workflow
-
     //Python
 
         // Provider for formatting. Possible options include 'autopep8', 'black', and 'yapf'.
@@ -122,7 +120,11 @@
             "runtest": true
         },
 
-    // Code Settings Sync Configuration Settings
+        // Experimental: Use Go language server from Google or
+        // Sourcegraph for Hover, Definition, Signature Help, Auto
+        // Completion and Formatting features instead of tools like
+        // godef, gocode and goreturns
+        "go.useLanguageServer": true
 
     // YAML Support by Red Hat
 
@@ -132,6 +134,12 @@
 
         // Enable/disable default YAML formatter (requires restart)
         "yaml.format.enable": true,
+
+    // Yang VS Code Extension
+
+        "[yang]": {
+            "editor.tabSize": 2,
+        },
 
     // PowerShell Configuration
 
@@ -187,6 +195,12 @@
 
         // Specifies the keymap to use for GitLens shortcut keys
         "gitlens.keymap": "chorded",
+
+        // Specifies whether to show the File History view
+        "gitlens.views.fileHistory.enabled": false,
+
+        // Specifies whether to show the Line History view
+        "gitlens.views.lineHistory.enabled": false,
 
     // Shell Launcher
 
