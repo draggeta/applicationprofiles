@@ -112,6 +112,9 @@
         // Whether to run Pylint with minimal set of rules.
         "python.linting.pylintUseMinimalCheckers": false,
 
+        // Enable unit testing using pytest.
+        "python.testing.pytestEnabled": true,
+
     // Go configuration
 
         // Feature level setting to enable/disable code lens for references and run/debug tests
@@ -124,7 +127,7 @@
         // Sourcegraph for Hover, Definition, Signature Help, Auto
         // Completion and Formatting features instead of tools like
         // godef, gocode and goreturns
-        "go.useLanguageServer": true
+        "go.useLanguageServer": true,
 
     // YAML Support by Red Hat
 
