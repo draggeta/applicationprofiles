@@ -99,10 +99,10 @@ if (($host.Name -eq 'ConsoleHost') -or ($host.Name -eq 'Visual Studio Code Host'
     # in the module that do this, but this implementation still isn't as smart
     # as ReSharper, so I'm just providing it as a sample.
 
-    Set-PSReadLineKeyHandler -Key '"', "'" `
-        -BriefDescription SmartInsertQuote `
-        -LongDescription "Insert paired quotes if not already on a quote" `
-        -ScriptBlock {
+    Set-PSReadLineKeyHandler -Key '"',"'" `
+                             -BriefDescription SmartInsertQuote `
+                             -LongDescription "Insert paired quotes if not already on a quote" `
+                             -ScriptBlock {
         param($key, $arg)
 
         $quote = $key.KeyChar
