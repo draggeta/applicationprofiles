@@ -90,15 +90,6 @@ foreach ($item in $softwareInstallArgs.GetEnumerator()) {
     choco install -y $item.Key --install-arguments="$($item.Value)"
 }
 
-
-# WINDOWS DEFENDER
-# Enable Controlled folder access
-Set-MpPreference -EnableControlledFolderAccess Enabled
-# Enable tamper protection (cannot do it via module yet)
-$mpRegistryKeyPath = "HKLM:\SOFTWARE\Microsoft\Windows Defender\Features"
-Set-ItemProperty -Path $mpRegistryKeyPath -Name "TamperProtection" -Value 5
-
-
 # Add user account to Hyper-V administrators
 Add-LocalGroupMember -Group "Hyper-V Administrators" -Member $env:username
 
