@@ -22,6 +22,7 @@ $enabledOptionalFeatureList = @(
     'HypervisorPlatform'
     'Microsoft-Hyper-V-All'
     'Microsoft-Windows-Subsystem-Linux'
+    'VirtualMachinePlatform'
     'Windows-Defender-ApplicationGuard'
 )
 Disable-WindowsOptionalFeature -Online -FeatureName $removedOptionalFeatureList -NoRestart
