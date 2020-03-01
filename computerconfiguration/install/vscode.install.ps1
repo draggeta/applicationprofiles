@@ -1,5 +1,6 @@
-# Install vscode extensions
+Write-Output "### VSCode"
 
+# Install vscode extensions
 $extensionList = @(
     'eamodio.gitlens'
     'Equinusocio.vsc-material-theme'
@@ -7,6 +8,7 @@ $extensionList = @(
     'ms-python.python'
     'ms-vscode.Go'
     'ms-vscode.powershell'
+    'ms-vscode-remote.vscode-remote-extensionpack'
     'PeterJausovec.vscode-docker'
     'PKief.material-icon-theme'
     'redhat.vscode-yaml'

@@ -1,4 +1,7 @@
+Write-Output "### Firefox"
+
 # Enable SSO for Firefox
+Write-Output "Enable Azure AD SSO"
 $manifestPath = Join-Path -Path $env:ProgramFiles -ChildPath "Windows Security\BrowserCore\manifest-firefox.json"
 $manifest = @"
 {
@@ -15,4 +18,10 @@ $manifest = @"
 Set-Content -Path $manifestPath -Value $manifest
 
 $messagingHostsPath = "HKCU:\Software\Mozilla\NativeMessagingHosts\com.microsoft.browsercore"
-New-Item -Path $messagingHostsPath -ItemType String -Value $manifestPath
+if (-not (Test-Path $messagingHostsPath)) {
+    New-Item -Path $messagingHostsPath -ItemType String -Value $manifestPath -Force
+}
+else {
+    Set-Item -Path $messagingHostsPath -Value $manifestPath -Force
+}
+
