@@ -60,7 +60,7 @@
     // Markdown
     // Disable the removal of trailing whitespaces, otherwise there are no newlines.
     "[markdown]": {
-        "files.trimTrailingWhitespace": false,
+        "files.trimTrailingWhitespace": false
     },
     // Integrated Terminal
     // Customizes what kind of terminal to launch.
@@ -113,13 +113,13 @@
     // YAML Support by Red Hat
     "[yaml]": {
         "editor.tabSize": 2,
-        "editor.formatOnSave": false,
+        "editor.formatOnSave": false
     },
     // Enable/disable default YAML formatter (requires restart)
     "yaml.format.enable": true,
     // Yang VS Code Extension
     "[yang]": {
-        "editor.tabSize": 2,
+        "editor.tabSize": 2
     },
     // PowerShell Configuration
     // Sets the codeformatting options to follow the given indent style in a way that is compatible with PowerShell syntax. For more information about the brace styles please refer to https://github.com/PoshCode/PowerShellPracticeAndStyle/issues/81.
