@@ -1,233 +1,190 @@
 // Place your settings in this file to overwrite the default settings
 {
     // Editor
-
-        // Controls if the diff editor shows changes in leading or trailing whitespace as diffs
-        "diffEditor.ignoreTrimWhitespace": false,
-
-        // When opening a file, `editor.tabSize` and `editor.insertSpaces` will be detected based on the file contents.
-        "editor.detectIndentation": true,
-
-        // Controls the font family.
-        "editor.fontFamily": "'Fira Code'",
-
-        // Enables font ligatures
-        "editor.fontLigatures": true,
-
-        // Insert spaces when pressing Tab. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
-        "editor.insertSpaces": true,
-
-        // Controls if the minimap is shown
-        "editor.minimap.enabled": true,
-
-        // Controls whether the editor should render indent guides
-        "editor.renderIndentGuides": true,
-
-        // Controls how the editor should render whitespace characters.
-        //  - none
-        //  - boundary: Render whitespace characters except for single spaces between words.
-        //  - all
-        "editor.renderWhitespace": "all",
-
-        // Columns at which to show vertical rulers
-        "editor.rulers": [ 72, 80, 120 ],
-
-        // The number of spaces a tab is equal to. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
-        "editor.tabSize": 4,
-
+    // Controls if the diff editor shows changes in leading or trailing whitespace as diffs
+    "diffEditor.ignoreTrimWhitespace": false,
+    // When opening a file, `editor.tabSize` and `editor.insertSpaces` will be detected based on the file contents.
+    "editor.detectIndentation": true,
+    // Controls the font family.
+    "editor.fontFamily": "'Fira Code'",
+    // Enables font ligatures
+    "editor.fontLigatures": true,
+    // Format a file on save. A formatter must be available, the file must not be saved after delay, and the editor must not be shutting down.
+    "editor.formatOnSave": true,
+    // Insert spaces when pressing Tab. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
+    "editor.insertSpaces": true,
+    // Controls if the minimap is shown
+    "editor.minimap.enabled": true,
+    // Controls whether the editor should render indent guides
+    "editor.renderIndentGuides": true,
+    // Controls how the editor should render whitespace characters.
+    //  - none
+    //  - boundary: Render whitespace characters except for single spaces between words.
+    //  - all
+    "editor.renderWhitespace": "all",
+    // Columns at which to show vertical rulers
+    "editor.rulers": [
+        72,
+        80,
+        120
+    ],
+    // The number of spaces a tab is equal to. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
+    "editor.tabSize": 4,
     // Workbench
-
-        // Specifies the color theme used in the workbench.
-        "workbench.colorTheme": "Material Theme High Contrast",
-
-        // Specifies the icon theme used in the workbench or 'null' to not show any file icons.
-        "workbench.iconTheme": "material-icon-theme",
-
+    // Specifies the color theme used in the workbench.
+    "workbench.colorTheme": "Material Theme High Contrast",
+    // Specifies the icon theme used in the workbench or 'null' to not show any file icons.
+    "workbench.iconTheme": "material-icon-theme",
     // Window
-
-        // Overrides colors from the currently selected color theme.
-        "workbench.colorCustomizations": {
-            "[Material Theme Ocean High Contrast]": {
-                "statusBar.foreground": "#595d68"
-            }
-        },
-
-        // Controls if a window should restore to full screen mode if it was exited in full screen mode.
-        "window.restoreFullscreen": true,
-
-        // Adjust the appearance of the window title bar. Changes require a full restart to apply.
-        "window.titleBarStyle": "custom",
-
-        // Adjust the zoom level of the window. The original size is 0 and each increment above (e.g. 1) or below (e.g. -1) represents zooming 20% larger or smaller. You can also enter decimals to adjust the zoom level with a finer granularity.
-        "window.zoomLevel": 0,
-
+    // Overrides colors from the currently selected color theme.
+    "workbench.colorCustomizations": {
+        "[Material Theme Ocean High Contrast]": {
+            "statusBar.foreground": "#595d68"
+        }
+    },
+    // Controls if a window should restore to full screen mode if it was exited in full screen mode.
+    "window.restoreFullscreen": true,
+    // Adjust the appearance of the window title bar. Changes require a full restart to apply.
+    "window.titleBarStyle": "custom",
+    // Adjust the zoom level of the window. The original size is 0 and each increment above (e.g. 1) or below (e.g. -1) represents zooming 20% larger or smaller. You can also enter decimals to adjust the zoom level with a finer granularity.
+    "window.zoomLevel": 0,
     // Files
-
-        // Controls auto save of dirty files. Accepted values:  "off", "afterDelay", "onFocusChange" (editor loses focus), "onWindowChange" (window loses focus). If set to "afterDelay", you can configure the delay in "files.autoSaveDelay".
-        "files.autoSave": "onFocusChange",
-
-        // When enabled, insert a final new line at the end of the file when saving it.
-        "files.insertFinalNewline": true,
-
-        // When enabled, will trim all new lines after the final new line at the end of the file when saving it.
-        "files.trimFinalNewlines": true,
-
-        // When enabled, will trim trailing whitespace when saving a file.
-        "files.trimTrailingWhitespace": true,
-
+    // Controls auto save of dirty files. Accepted values:  "off", "afterDelay", "onFocusChange" (editor loses focus), "onWindowChange" (window loses focus). If set to "afterDelay", you can configure the delay in "files.autoSaveDelay".
+    "files.autoSave": "afterDelay",
+    // When enabled, insert a final new line at the end of the file when saving it.
+    "files.insertFinalNewline": true,
+    // When enabled, will trim all new lines after the final new line at the end of the file when saving it.
+    "files.trimFinalNewlines": true,
+    // When enabled, will trim trailing whitespace when saving a file.
+    "files.trimTrailingWhitespace": true,
     // Markdown
-
-        // Disable the removal of trailing whitespaces, otherwise there are no newlines.
-        "[markdown]": {
-            "files.trimTrailingWhitespace": false,
-        },
-
+    // Disable the removal of trailing whitespaces, otherwise there are no newlines.
+    "[markdown]": {
+        "files.trimTrailingWhitespace": false,
+    },
     // Integrated Terminal
-
-        // Customizes what kind of terminal to launch.
-        "terminal.explorerKind": "integrated",
-
-        // Controls whether the terminal cursor blinks.
-        "terminal.integrated.cursorBlinking": true,
-
-        // The path of the shell that the terminal uses on Windows. [Read more about configuring the shell](https://code.visualstudio.com/docs/editor/integrated-terminal#_configuration).
-        "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\6\\pwsh.exe",
-
+    // Customizes what kind of terminal to launch.
+    "terminal.explorerKind": "integrated",
+    // Controls whether the terminal cursor blinks.
+    "terminal.integrated.cursorBlinking": true,
+    // The path of the shell that the terminal uses on Windows. [Read more about configuring the shell](https://code.visualstudio.com/docs/editor/integrated-terminal#_configuration).
+    "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\6\\pwsh.exe",
     // Breadcrumb Navigation
-
-        // Enable/disable navigation breadcrumbs
-        "breadcrumbs.enabled": true,
-
+    // Enable/disable navigation breadcrumbs
+    "breadcrumbs.enabled": true,
     //Python
-
-        // Provider for formatting. Possible options include 'autopep8', 'black', and 'yapf'.
-        "python.formatting.provider": "black",
-
-        // Whether to lint Python files using pep8
-        "python.linting.pep8Enabled": true,
-
-        // Path to pep8, you can use a custom version of pep8 by modifying this setting to include the full path.
-        "python.linting.pep8Path": "pycodestyle",
-
-        // Whether to run Pylint with minimal set of rules.
-        "python.linting.pylintUseMinimalCheckers": false,
-
-        // Enable unit testing using pytest.
-        "python.testing.pytestEnabled": true,
-
+    // Provider for formatting. Possible options include 'autopep8', 'black', and 'yapf'.
+    "python.formatting.provider": "black",
+    // Whether to lint Python files using pep8
+    "python.linting.pycodestyleEnabled": true,
+    // Path to pep8, you can use a custom version of pep8 by modifying this setting to include the full path.
+    "python.linting.pycodestylePath": "pycodestyle",
+    // Whether to run Pylint with minimal set of rules.
+    "python.linting.pylintUseMinimalCheckers": false,
+    // Enable unit testing using pytest.
+    "python.testing.pytestEnabled": true,
     // Go configuration
-
-        // Feature level setting to enable/disable code lens for references and run/debug tests
-        "go.enableCodeLens": {
-            "references": true,
-            "runtest": true
-        },
-
-        // Experimental: Use Go language server from Google or
-        // Sourcegraph for Hover, Definition, Signature Help, Auto
-        // Completion and Formatting features instead of tools like
-        // godef, gocode and goreturns
-        "go.useLanguageServer": true,
-
+    "go.autocompleteUnimportedPackages": true,
+    // Feature level setting to enable/disable code lens for references and run/debug tests
+    "go.enableCodeLens": {
+        "references": true,
+        "runtest": true
+    },
+    "go.languageServerExperimentalFeatures": {
+        "format": true,
+        "autoComplete": true,
+        "rename": true,
+        "goToDefinition": true,
+        "hover": true,
+        "signatureHelp": true,
+        "goToTypeDefinition": true,
+        "goToImplementation": true,
+        "documentSymbols": true,
+        "workspaceSymbols": true,
+        "findReferences": true,
+        "diagnostics": true,
+        "documentLink": true
+    },
+    // Experimental: Use Go language server from Google or
+    // Sourcegraph for Hover, Definition, Signature Help, Auto
+    // Completion and Formatting features instead of tools like
+    // godef, gocode and goreturns
+    "go.useLanguageServer": true,
     // YAML Support by Red Hat
-
-        "[yaml]": {
-            "editor.tabSize": 2,
-        },
-
-        // Enable/disable default YAML formatter (requires restart)
-        "yaml.format.enable": true,
-
+    "[yaml]": {
+        "editor.tabSize": 2,
+        "editor.formatOnSave": false,
+    },
+    // Enable/disable default YAML formatter (requires restart)
+    "yaml.format.enable": true,
     // Yang VS Code Extension
-
-        "[yang]": {
-            "editor.tabSize": 2,
-        },
-
+    "[yang]": {
+        "editor.tabSize": 2,
+    },
     // PowerShell Configuration
-
-        // Sets the codeformatting options to follow the given indent style in a way that is compatible with PowerShell syntax. For more information about the brace styles please refer to https://github.com/PoshCode/PowerShellPracticeAndStyle/issues/81.
-        "powershell.codeFormatting.preset": "OTBS",
-
-        // Shows the integrated console when the PowerShell extension is initialized.
-        "powershell.integratedConsole.showOnStartup": false,
-
-        // Specifies the full path to a PowerShell executable. Changes the installation of PowerShell used for language and debugging services.
-        "powershell.powerShellExePath": "C:\\Program Files\\PowerShell\\6\\pwsh.exe",
-
+    // Sets the codeformatting options to follow the given indent style in a way that is compatible with PowerShell syntax. For more information about the brace styles please refer to https://github.com/PoshCode/PowerShellPracticeAndStyle/issues/81.
+    "powershell.codeFormatting.preset": "OTBS",
+    // Shows the integrated console when the PowerShell extension is initialized.
+    "powershell.integratedConsole.showOnStartup": false,
+    // Specifies the full path to a PowerShell executable. Changes the installation of PowerShell used for language and debugging services.
+    "powershell.powerShellExePath": "C:\\Program Files\\PowerShell\\6\\pwsh.exe",
     // Material Icons
-
-        // Change the color of the folder icons.
-        "material-icon-theme.folders.color": "#26a69a",
-
-        // Change the opacity of the icons.
-        "material-icon-theme.opacity": 0.75,
-
+    // Change the color of the folder icons.
+    "material-icon-theme.folders.color": "#26a69a",
+    // Change the opacity of the icons.
+    "material-icon-theme.opacity": 0.75,
     // Material Theme
-
-        // Enable/disable auto-apply of Material Theme icons
-        "materialTheme.autoApplyIcons": false,
-
+    // Enable/disable auto-apply of Material Theme icons
+    "materialTheme.autoApplyIcons": false,
     // Git
-
-        // Whether auto fetching is enabled
-        "git.autofetch": true,
-
-        // Confirm before synchronizing git repositories
-        "git.confirmSync": false,
-
-        // Commit all changes when there are no staged changes.
-        "git.enableSmartCommit": true,
-
+    // Whether auto fetching is enabled
+    "git.autofetch": true,
+    // Confirm before synchronizing git repositories
+    "git.confirmSync": false,
+    // Commit all changes when there are no staged changes.
+    "git.enableSmartCommit": true,
     // GitLens
-
-        // Specifies which messages should be suppressed
-        "gitlens.advanced.messages": {
-            "suppressCommitHasNoPreviousCommitWarning": false,
-            "suppressCommitNotFoundWarning": false,
-            "suppressFileNotUnderSourceControlWarning": false,
-            "suppressGitVersionWarning": false,
-            "suppressLineUncommittedWarning": false,
-            "suppressNoRepositoryWarning": false,
-            "suppressResultsExplorerNotice": true,
-            "suppressShowKeyBindingsNotice": true
-        },
-
-        // Specifies whether to show avatar images instead of status icons in the `GitLens File History` explorer
-        "gitlens.historyExplorer.enabled": false,
-
-        // Specifies the keymap to use for GitLens shortcut keys
-        "gitlens.keymap": "chorded",
-
-        // Specifies whether to show the File History view
-        "gitlens.views.fileHistory.enabled": false,
-
-        // Specifies whether to show the Line History view
-        "gitlens.views.lineHistory.enabled": false,
-
+    // Specifies which messages should be suppressed
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": true,
+        "suppressShowKeyBindingsNotice": true
+    },
+    // Specifies whether to show avatar images instead of status icons in the `GitLens File History` explorer
+    "gitlens.historyExplorer.enabled": false,
+    // Specifies the keymap to use for GitLens shortcut keys
+    "gitlens.keymap": "chorded",
+    // Specifies whether to show the File History view
+    "gitlens.views.fileHistory.enabled": false,
+    // Specifies whether to show the Line History view
+    "gitlens.views.lineHistory.enabled": true,
     // Shell Launcher
-
-        // A list of shell configurations for Windows
-        "shellLauncher.shells.windows": [
-            {
-                "shell": "C:\\Program Files\\PowerShell\\6\\pwsh.exe",
-                "label": "PowerShell Core"
-            },
-            {
-                "shell": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-                "label": "PowerShell"
-            },
-            {
-                "shell": "C:\\Windows\\System32\\cmd.exe",
-                "label": "cmd"
-            },
-            {
-                "shell": "C:\\Windows\\System32\\bash.exe",
-                "label": "WSL Bash"
-            },
-            {
-                "shell": "C:\\Users\\tony.fortesramos\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
-                "label": "Python"
-            }
-        ]
+    // A list of shell configurations for Windows
+    "shellLauncher.shells.windows": [
+        {
+            "shell": "C:\\Program Files\\PowerShell\\6\\pwsh.exe",
+            "label": "PowerShell Core"
+        },
+        {
+            "shell": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+            "label": "PowerShell"
+        },
+        {
+            "shell": "C:\\Windows\\System32\\cmd.exe",
+            "label": "cmd"
+        },
+        {
+            "shell": "C:\\Windows\\System32\\bash.exe",
+            "label": "WSL Bash"
+        },
+        {
+            "shell": "C:\\Users\\tony.fortesramos\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
+            "label": "Python"
+        }
+    ]
 }
