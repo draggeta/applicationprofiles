@@ -18,7 +18,6 @@ foreach ($process in $allowedProcesses) {
 # Enable tamper protection (cannot do it via module yet)
 Write-Output "Enable tamper protection"
 $mpRegistryKeyPath = "HKLM:\SOFTWARE\Microsoft\Windows Defender\Features"
-$mpRegistryKeyValue = Get-Item -Path $mpRegistryKeyPath
 if ((Get-ItemPropertyValue $mpRegistryKeyPath -Name TamperProtection) -lt 1) {
     Set-ItemProperty -Path $mpRegistryKeyPath -Name "TamperProtection" -Value 5
 }
