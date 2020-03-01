@@ -3,14 +3,19 @@ Just a few settings for some of my more used applications.
 
 Right now, it contains the following applications:
 
+* __General Configuration__
+	* Software to install
+	* OS Preferences
 * __PowerShell__
-	* PSReadline module
-	* posh-git module
-* __Visual Studio Code__
-	* User settings backup
+	* Modules
+    * Profile
+* __VSCode__
+	* Extensions
 	* Key bindings
-* __Computer Configuration__
-	* Software and settings to install
+	* User settings
+* __Windows Terminal__
+	* Key bindings
+	* User settings
 * __KeePass__
 	* Application settings
 		* Obfuscate password
