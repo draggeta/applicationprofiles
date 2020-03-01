@@ -1,4 +1,7 @@
+Write-Output "### Personalization"
+
 # Set Explorer settings
+Write-Output "Setting File Explorer preferences"
 $explorerSettings = @{
     Hidden            = 1     # Show hidden items
     HideFileExt       = 0     # Show file extensions
@@ -19,6 +22,7 @@ foreach ($item in $personalizeSettings.GetEnumerator()) {
 }
 
 # Accent color
+Write-Output "Setting Desktop preferences"
 $accentColorSettings = @{
     AutoColorization  = 0     # Automatically change accent color depending on background
 }

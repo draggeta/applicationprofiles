@@ -1,7 +1,7 @@
 Write-Output "### Firefox"
 
 # Enable SSO for Firefox
-Write-Output "Enable Azure AD SSO"
+Write-Output "Enabling Azure AD SSO"
 $manifestPath = Join-Path -Path $env:ProgramFiles -ChildPath "Windows Security\BrowserCore\manifest-firefox.json"
 $manifest = @"
 {

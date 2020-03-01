@@ -1,95 +1,40 @@
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+Write-Output "###### Packages"
 
-
-# SYSTEM
-# Set time configuration
-w32tm /config /update /manualpeerlist:nl.pool.ntp.org
-Restart-Service w32time
-w32tm /resync /nowait
-
+# Load variables
+. (Join-Path $PSScriptRoot -ChildPath "variables\variables.ps1")
 
 # FEATURES
 # Remove unneeded/unsecure Windows features
-$removedOptionalFeatureList = @(
-    'SMB1Protocol'
-    'MicrosoftWindowsPowerShellV2'
-    'MicrosoftWindowsPowerShellV2Root'
-    'WindowsMediaPlayer'
-)
-$enabledOptionalFeatureList = @(
-    'Containers'
-    'Containers-DisposableClientVM'
-    'HypervisorPlatform'
-    'Microsoft-Hyper-V-All'
-    'Microsoft-Windows-Subsystem-Linux'
-    'VirtualMachinePlatform'
-    'Windows-Defender-ApplicationGuard'
-)
-Disable-WindowsOptionalFeature -Online -FeatureName $removedOptionalFeatureList -NoRestart
-Enable-WindowsOptionalFeature -Online -FeatureName $enabledOptionalFeatureList -NoRestart
-$removedCapabilityList = @(
-    'Media.WindowsMediaPlayer~~~~0.0.12.0'
-)
-$enabledCapabilityList = @(
-    'OpenSSH.Client~~~~0.0.1.0'
-    'OpenSSH.Server~~~~0.0.1.0'
-)
+Write-Output "Removing Optional Features"
+Disable-WindowsOptionalFeature -Online -FeatureName $removedOptionalFeatureList -NoRestart > $null
+
+Write-Output "Installing Optional Features"
+Enable-WindowsOptionalFeature -Online -FeatureName $enabledOptionalFeatureList -NoRestart > $null
+
+Write-Output "Removing Capabilities"
 foreach($capability in $removedCapabilityList) {
-    Remove-WindowsCapability -Online -Name $capability
+    Remove-WindowsCapability -Online -Name $capability > $null
 }
+Write-Output "Installing Capabilities"
 foreach($capability in $enabledCapabilityList) {
-    Add-WindowsCapability -Online -Name $capability
+    Add-WindowsCapability -Online -Name $capability > $null
 }
-
-
-## Create AppModelUnlock if it doesn't exist, required for enabling Developer Mode
-#$RegistryKeyPath = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock"
-#if (-not(Test-Path -Path $RegistryKeyPath)) {
-#    New-Item -Path $RegistryKeyPath -ItemType Directory -Force
-#}
-
-## Add registry value to enable Developer Mode
-#New-ItemProperty -Path $RegistryKeyPath -Name AllowDevelopmentWithoutDevLicense -PropertyType DWORD -Value 1
 
 
 # SOFTWARE
 # Install Chocolatey
-Set-ExecutionPolicy Bypass -Scope Process -Force
-Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-# Install software
-$softwareList = @(
-    '7zip'
-    'azure-cli'
-    'docker-desktop'
-    'git'
-    'git-credential-manager-for-windows'
-    'golang'
-    'firacode'
-    'firefox'
-    'k-litecodecpackfull'
-    'keepass'
-    'microsoft-edge'
-    'microsoft-teams.install'
-    'microsoftazurestorageexplorer'
-    'mremoteng'
-    'notepadplusplus'
-    'paint.net'
-    'putty'
-    'python'
-    'terraform'
-    'vault'
-    'vscode'
-    'wireshark'
-)
-choco install -y $softwareList
-$softwareInstallArgs = @{
-    'powershell-core' = 'ADDEXPLORERCONTEXTMENUOPENPOWERSHELL=1 REGISTERMANIFEST=1 ENABLEPSREMOTING=1'
-}
-foreach ($item in $softwareInstallArgs.GetEnumerator()) {
-    choco install -y $item.Key --install-arguments="$($item.Value)"
+Write-Output "Installing Chocolatey"
+$outFile = "$env:USERPROFILE\Downloads\install.ps1"
+Invoke-WebRequest -Uri https://chocolatey.org/install.ps1 -OutFile $outFile -UseBasicParsing
+$sig = Get-AuthenticodeSignature -FilePath $outFile
+
+if ($sig.Status -eq 'Valid' -and $sig.SignerCertificate.Subject -like "*O=`"Chocolatey Software, Inc.`"*") {
+    . $outFile > $null
 }
 
-# Add user account to Hyper-V administrators
-Add-LocalGroupMember -Group "Hyper-V Administrators" -Member $env:username
+Write-Output "Installing software"
+choco install -y $softwareList > $null
 
-Restart-Computer -Force
+foreach ($item in $softwareListInstallArgs.GetEnumerator()) {
+    choco install -y $item.Key --install-arguments="$($item.Value)" > $null
+}
