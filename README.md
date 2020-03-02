@@ -4,8 +4,8 @@ Just a few settings for some of my more used applications.
 Right now, it contains the following applications:
 
 * __General Configuration__
-	* Software to install
-	* OS Preferences
+	* Installed software
+	* OS preferences
 * __PowerShell__
 	* Modules
     * Profile
