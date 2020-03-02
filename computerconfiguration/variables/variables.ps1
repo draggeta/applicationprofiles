@@ -34,8 +34,8 @@ $controlledFolderAccessProcesses = @(
 $dotfileList = @(
     @{
         description = "KeePass"
-        link        = "$env:appdata\KeePass\KeePass.config.xml"
-        target      = (Join-Path -Path $PSScriptRoot -ChildPath "../../keepass/KeePass.config.xml" -Resolve)
+        link        = "${env:ProgramFiles(x86)}\KeePass Password Safe 2\KeePass.config.enforced.xml"
+        target      = (Join-Path -Path $PSScriptRoot -ChildPath "../../keepass/KeePass.config.enforced.xml" -Resolve)
     },
     @{
         description = "VSCode Keybindings"
