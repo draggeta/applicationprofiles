@@ -12,11 +12,11 @@ Write-Output "Installing Optional Features"
 Enable-WindowsOptionalFeature -Online -FeatureName $enabledOptionalFeatureList -NoRestart > $null
 
 Write-Output "Removing Capabilities"
-foreach($capability in $removedCapabilityList) {
+foreach ($capability in $removedCapabilityList) {
     Remove-WindowsCapability -Online -Name $capability > $null
 }
 Write-Output "Installing Capabilities"
-foreach($capability in $enabledCapabilityList) {
+foreach ($capability in $enabledCapabilityList) {
     Add-WindowsCapability -Online -Name $capability > $null
 }
 

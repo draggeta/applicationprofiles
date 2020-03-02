@@ -74,6 +74,7 @@ $softwareList = @(
     'paint.net'
     'putty'
     'python'
+    'signal'
     'terraform'
     'vault'
     'vscode'
