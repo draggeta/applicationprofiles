@@ -186,5 +186,18 @@
             "shell": "C:\\Users\\tony.fortesramos\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
             "label": "Python"
         }
-    ]
+    ],
+    "terraform.indexing": {
+        "enabled": true,
+        "liveIndexing": true,
+        "delay": 500,
+        "exclude": [
+            ".terraform/**/*",
+            "**/.terraform/**/*"
+        ]
+    },
+    "terraform.languageServer": {
+        "enabled": true,
+        "args": []
+    }
 }

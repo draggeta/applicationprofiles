@@ -72,6 +72,7 @@ $softwareList = @(
     'mremoteng'
     'notepadplusplus'
     'paint.net'
+    'powertoys'
     'putty'
     'python'
     'signal'
