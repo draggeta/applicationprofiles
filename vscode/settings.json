@@ -68,7 +68,7 @@
     // Controls whether the terminal cursor blinks.
     "terminal.integrated.cursorBlinking": true,
     // The path of the shell that the terminal uses on Windows. [Read more about configuring the shell](https://code.visualstudio.com/docs/editor/integrated-terminal#_configuration).
-    "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\6\\pwsh.exe",
+    "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
     // Breadcrumb Navigation
     // Enable/disable navigation breadcrumbs
     "breadcrumbs.enabled": true,
@@ -126,8 +126,6 @@
     "powershell.codeFormatting.preset": "OTBS",
     // Shows the integrated console when the PowerShell extension is initialized.
     "powershell.integratedConsole.showOnStartup": false,
-    // Specifies the full path to a PowerShell executable. Changes the installation of PowerShell used for language and debugging services.
-    "powershell.powerShellExePath": "C:\\Program Files\\PowerShell\\6\\pwsh.exe",
     // Material Icons
     // Change the color of the folder icons.
     "material-icon-theme.folders.color": "#26a69a",
@@ -167,7 +165,7 @@
     // A list of shell configurations for Windows
     "shellLauncher.shells.windows": [
         {
-            "shell": "C:\\Program Files\\PowerShell\\6\\pwsh.exe",
+            "shell": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
             "label": "PowerShell Core"
         },
         {
@@ -188,8 +186,8 @@
         }
     ],
     "terraform.indexing": {
-        "enabled": true,
-        "liveIndexing": true,
+        "enabled": false,
+        "liveIndexing": false,
         "delay": 500,
         "exclude": [
             ".terraform/**/*",
