@@ -88,6 +88,7 @@ $softwareListInstallArgs = @{
 
 # PowerShell
 $psModuleList = @(
+    'AWS.Tools.Common'
     'Az'
     'InvokeBuild'
     'platyPS'
