@@ -17,10 +17,8 @@ foreach ($script in $poshScripts) {
     if ($script.Name -like "*.privileged.ps1") {
         Start-Process powershell.exe -ArgumentList "-ExecutionPolicy Bypass -File $($script.FullName)" -Wait
         Start-Process pwsh.exe -ArgumentList "-ExecutionPolicy Bypass -File $($script.FullName)" -Wait
-    }
-    else {
+    } else {
         Start-Process runas.exe -ArgumentList "/trustlevel:0x20000 `"powershell.exe -ExecutionPolicy Bypass -File $($script.FullName)`"" -Wait
         Start-Process runas.exe -ArgumentList "/trustlevel:0x20000 `"pwsh.exe -ExecutionPolicy Bypass -File $($script.FullName)`"" -Wait
     }
-
 }

@@ -38,3 +38,9 @@ choco install -y $softwareList > $null
 foreach ($item in $softwareListInstallArgs.GetEnumerator()) {
     choco install -y $item.Key --install-arguments="$($item.Value)" > $null
 }
+
+# PowerShell
+Start-Process powershell.exe -ArgumentList "-ExecutionPolicy Bypass -Command Install-Module PowerShellGet -Force" -Wait
+
+Start-Process powershell.exe -ArgumentList "-NoProfile -NoExit -ExecutionPolicy Bypass -Command Install-Module PSReadline -AllowPrerelease -Force"
+Start-Process pwsh.exe -ArgumentList "-NoProfile -NoExit -ExecutionPolicy Bypass -Command Install-Module PSReadline -AllowPrerelease -Force"

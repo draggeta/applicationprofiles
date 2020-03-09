@@ -106,7 +106,6 @@ $psModuleList = @(
     'Az'
     'AWS.Tools.Common'
     'AWS.Tools.Installer'
-    'PSReadLine'
 )
 
 # VSCode
