@@ -52,6 +52,16 @@ $dotfileList = @(
         link        = "$env:localappdata\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\profiles.json"
         target      = (Join-Path -Path $PSScriptRoot -ChildPath "../../windowsterminal/profiles.json" -Resolve)
     }
+    @{
+        description = "PowerShell"
+        link        = "$([Environment]::GetFolderPath([Environment+SpecialFolder]::MyDocuments))\PowerShell\Microsoft.PowerShell_profile.ps1"
+        target      = (Join-Path -Path $PSScriptRoot -ChildPath "../../powershell/profile.ps1" -Resolve)
+    }
+    @{
+        description = "WindowsPowerShell"
+        link        = "$([Environment]::GetFolderPath([Environment+SpecialFolder]::MyDocuments))\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"
+        target      = (Join-Path -Path $PSScriptRoot -ChildPath "../../powershell/profile.ps1" -Resolve)
+    }
 )
 
 # Chocolatey
@@ -88,14 +98,15 @@ $softwareListInstallArgs = @{
 
 # PowerShell
 $psModuleList = @(
+    'InvokeBuild'
+    'Pester'
+    'platyPS'
+    'oh-my-posh'
+    'posh-git'
+    'Az'
     'AWS.Tools.Common'
     'AWS.Tools.Installer'
-    'Az'
-    'InvokeBuild'
-    'platyPS'
-    'Posh-git'
     'PSReadLine'
-    'Pester'
 )
 
 # VSCode
