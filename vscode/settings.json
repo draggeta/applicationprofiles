@@ -6,7 +6,7 @@
     // When opening a file, `editor.tabSize` and `editor.insertSpaces` will be detected based on the file contents.
     "editor.detectIndentation": true,
     // Controls the font family.
-    "editor.fontFamily": "'Fira Code'",
+    "editor.fontFamily": "'Cascadia Code','Fira Code'",
     // Enables font ligatures
     "editor.fontLigatures": true,
     // Format a file on save. A formatter must be available, the file must not be saved after delay, and the editor must not be shutting down.
