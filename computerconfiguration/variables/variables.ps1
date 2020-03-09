@@ -68,6 +68,7 @@ $dotfileList = @(
 $softwareList = @(
     '7zip'
     'azure-cli'
+    'cascadiafonts'
     'docker-desktop'
     'git'
     'git-credential-manager-for-windows'

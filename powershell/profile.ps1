@@ -420,7 +420,7 @@ if (($host.Name -eq 'ConsoleHost') -or ($host.Name -eq 'Visual Studio Code Host'
     # F1 for help on the command line - naturally
     Set-PSReadLineKeyHandler -Key F1 `
         -BriefDescription CommandHelp `
-        -LongDescription "Open the help window for the current command" `
+        -LongDescription "Open the help website for the current command" `
         -ScriptBlock {
         param($key, $arg)
 
@@ -446,7 +446,7 @@ if (($host.Name -eq 'ConsoleHost') -or ($host.Name -eq 'Visual Studio Code Host'
                 }
 
                 if ($commandName -ne $null) {
-                    Get-Help $commandName -ShowWindow
+                    Get-Help $commandName -Online
                 }
             }
         }
