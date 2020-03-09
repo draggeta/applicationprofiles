@@ -2,6 +2,16 @@ using namespace System.Management.Automation
 using namespace System.Management.Automation.Language
 
 Import-Module posh-git
+Import-Module oh-my-posh
+
+$ThemeSettings.CurrentUser = "Tony"
+# https://github.com/JanDeDobbeleer/oh-my-posh
+Set-Theme Paradox # Agnoster, Paradox, Sorin
+
+$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
+if (Test-Path($ChocolateyProfile)) {
+    Import-Module "$ChocolateyProfile"
+}
 
 if (($host.Name -eq 'ConsoleHost') -or ($host.Name -eq 'Visual Studio Code Host')) {
     Import-Module PSReadLine
@@ -40,8 +50,7 @@ if (($host.Name -eq 'ConsoleHost') -or ($host.Name -eq 'Visual Studio Code Host'
                     $line = $line.Substring(0, $line.Length - 1)
                     $lines = if ($lines) {
                         "$lines`n$line"
-                    }
-                    else {
+                    } else {
                         $line
                     }
                     continue
@@ -85,8 +94,9 @@ if (($host.Name -eq 'ConsoleHost') -or ($host.Name -eq 'Visual Studio Code Host'
 
     # But the Windows style completion
     # is still useful sometimes, so bind some keys so we can do both
-    Set-PSReadLineKeyHandler -Key Ctrl+Tab -Function TabCompleteNext
-    Set-PSReadLineKeyHandler -Key Ctrl+Shift+Tab -Function TabCompletePrevious
+    # WARNING: DOESN'T WORK IN WINDOWS TERMINAL
+    # Set-PSReadLineKeyHandler -Key Ctrl+Tab -Function TabCompleteNext
+    # Set-PSReadLineKeyHandler -Key Ctrl+Shift+Tab -Function TabCompletePrevious
 
     # CaptureScreen is good for blog posts or email showing a transaction
     # of what you did when asking for help or demonstrating a technique.
@@ -99,10 +109,10 @@ if (($host.Name -eq 'ConsoleHost') -or ($host.Name -eq 'Visual Studio Code Host'
     # in the module that do this, but this implementation still isn't as smart
     # as ReSharper, so I'm just providing it as a sample.
 
-    Set-PSReadLineKeyHandler -Key '"',"'" `
-                             -BriefDescription SmartInsertQuote `
-                             -LongDescription "Insert paired quotes if not already on a quote" `
-                             -ScriptBlock {
+    Set-PSReadLineKeyHandler -Key '"', "'" `
+        -BriefDescription SmartInsertQuote `
+        -LongDescription "Insert paired quotes if not already on a quote" `
+        -ScriptBlock {
         param($key, $arg)
 
         $quote = $key.KeyChar
@@ -165,11 +175,10 @@ if (($host.Name -eq 'ConsoleHost') -or ($host.Name -eq 'Visual Studio Code Host'
         }
 
         if ($null -eq $token) {
-            if ($line[0..$cursor].Where{$_ -eq $quote}.Count % 2 -eq 1) {
+            if ($line[0..$cursor].Where{ $_ -eq $quote }.Count % 2 -eq 1) {
                 # Odd number of quotes before the cursor, insert a single quote
                 [Microsoft.PowerShell.PSConsoleReadLine]::Insert($quote)
-            }
-            else {
+            } else {
                 # Insert matching quotes, move cursor to be in between the quotes
                 [Microsoft.PowerShell.PSConsoleReadLine]::Insert("$quote$quote")
                 [Microsoft.PowerShell.PSConsoleReadLine]::SetCursorPosition($cursor + 1)
@@ -222,8 +231,7 @@ if (($host.Name -eq 'ConsoleHost') -or ($host.Name -eq 'Visual Studio Code Host'
 
         if ($line[$cursor] -eq $key.KeyChar) {
             [Microsoft.PowerShell.PSConsoleReadLine]::SetCursorPosition($cursor + 1)
-        }
-        else {
+        } else {
             [Microsoft.PowerShell.PSConsoleReadLine]::Insert("$($key.KeyChar)")
         }
     }
@@ -252,8 +260,7 @@ if (($host.Name -eq 'ConsoleHost') -or ($host.Name -eq 'Visual Studio Code Host'
 
             if ($toMatch -ne $null -and $line[$cursor - 1] -eq $toMatch) {
                 [Microsoft.PowerShell.PSConsoleReadLine]::Delete($cursor - 1, 2)
-            }
-            else {
+            } else {
                 [Microsoft.PowerShell.PSConsoleReadLine]::BackwardDeleteChar($key, $arg)
             }
         }
@@ -265,36 +272,35 @@ if (($host.Name -eq 'ConsoleHost') -or ($host.Name -eq 'Visual Studio Code Host'
     # This binding will let you save that command in the history so you can recall it,
     # but it doesn't actually execute.  It also clears the line with RevertLine so the
     # undo stack is reset - though redo will still reconstruct the command line.
-    Set-PSReadLineKeyHandler -Key Alt+W `
-        -BriefDescription SaveInHistory `
-        -LongDescription "Save current line in history but do not execute" `
-        -ScriptBlock {
-        param($key, $arg)
+    # Set-PSReadLineKeyHandler -Key Alt+W `
+    #     -BriefDescription SaveInHistory `
+    #     -LongDescription "Save current line in history but do not execute" `
+    #     -ScriptBlock {
+    #     param($key, $arg)
 
-        $line = $null
-        $cursor = $null
-        [Microsoft.PowerShell.PSConsoleReadLine]::GetBufferState([ref]$line, [ref]$cursor)
-        [Microsoft.PowerShell.PSConsoleReadLine]::AddToHistory($line)
-        [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
-    }
+    #     $line = $null
+    #     $cursor = $null
+    #     [Microsoft.PowerShell.PSConsoleReadLine]::GetBufferState([ref]$line, [ref]$cursor)
+    #     [Microsoft.PowerShell.PSConsoleReadLine]::AddToHistory($line)
+    #     [Microsoft.PowerShell.PSConsoleReadLine]::RevertLine()
+    # }
 
-    # Insert text from the clipboard as a here string
-    Set-PSReadLineKeyHandler -Key Ctrl+Shift+v `
-        -BriefDescription PasteAsHereString `
-        -LongDescription "Paste the clipboard text as a here string" `
-        -ScriptBlock {
-        param($key, $arg)
+    # # Insert text from the clipboard as a here string
+    # Set-PSReadLineKeyHandler -Key Ctrl+Shift+v `
+    #     -BriefDescription PasteAsHereString `
+    #     -LongDescription "Paste the clipboard text as a here string" `
+    #     -ScriptBlock {
+    #     param($key, $arg)
 
-        Add-Type -Assembly PresentationCore
-        if ([System.Windows.Clipboard]::ContainsText()) {
-            # Get clipboard text - remove trailing spaces, convert \r\n to \n, and remove the final \n.
-            $text = ([System.Windows.Clipboard]::GetText() -replace "\p{Zs}*`r?`n", "`n").TrimEnd()
-            [Microsoft.PowerShell.PSConsoleReadLine]::Insert("@'`n$text`n'@")
-        }
-        else {
-            [Microsoft.PowerShell.PSConsoleReadLine]::Ding()
-        }
-    }
+    #     Add-Type -Assembly PresentationCore
+    #     if ([System.Windows.Clipboard]::ContainsText()) {
+    #         # Get clipboard text - remove trailing spaces, convert \r\n to \n, and remove the final \n.
+    #         $text = ([System.Windows.Clipboard]::GetText() -replace "\p{Zs}*`r?`n", "`n").TrimEnd()
+    #         [Microsoft.PowerShell.PSConsoleReadLine]::Insert("@'`n$text`n'@")
+    #     } else {
+    #         [Microsoft.PowerShell.PSConsoleReadLine]::Ding()
+    #     }
+    # }
 
     # Sometimes you want to get a property of invoke a member on what you've entered so far
     # but you need parens to do that.  This binding will help by putting parens around the current selection,
@@ -315,8 +321,7 @@ if (($host.Name -eq 'ConsoleHost') -or ($host.Name -eq 'Visual Studio Code Host'
         if ($selectionStart -ne -1) {
             [Microsoft.PowerShell.PSConsoleReadLine]::Replace($selectionStart, $selectionLength, '(' + $line.SubString($selectionStart, $selectionLength) + ')')
             [Microsoft.PowerShell.PSConsoleReadLine]::SetCursorPosition($selectionStart + $selectionLength + 2)
-        }
-        else {
+        } else {
             [Microsoft.PowerShell.PSConsoleReadLine]::Replace(0, $line.Length, '(' + $line + ')')
             [Microsoft.PowerShell.PSConsoleReadLine]::EndOfLine()
         }
@@ -361,12 +366,10 @@ if (($host.Name -eq 'ConsoleHost') -or ($host.Name -eq 'Visual Studio Code Host'
             if ($tokenText[0] -eq '"' -and $tokenText[-1] -eq '"') {
                 # Switch to no quotes
                 $replacement = $tokenText.Substring(1, $tokenText.Length - 2)
-            }
-            elseif ($tokenText[0] -eq "'" -and $tokenText[-1] -eq "'") {
+            } elseif ($tokenText[0] -eq "'" -and $tokenText[-1] -eq "'") {
                 # Switch to double quotes
                 $replacement = '"' + $tokenText.Substring(1, $tokenText.Length - 2) + '"'
-            }
-            else {
+            } else {
                 # Add single quotes
                 $replacement = "'" + $tokenText + "'"
             }
@@ -454,7 +457,7 @@ if (($host.Name -eq 'ConsoleHost') -or ($host.Name -eq 'Visual Studio Code Host'
     # Ctrj+j then the same key will change back to that directory without
     # needing to type cd and won't change the command line.
 
-    $global:PSReadLineMarks = @{}
+    $global:PSReadLineMarks = @{ }
 
     Set-PSReadLineKeyHandler -Key Ctrl+Shift+j `
         -BriefDescription MarkDirectory `
@@ -487,8 +490,8 @@ if (($host.Name -eq 'ConsoleHost') -or ($host.Name -eq 'Visual Studio Code Host'
         param($key, $arg)
 
         $global:PSReadLineMarks.GetEnumerator() | ForEach-Object {
-            [PSCustomObject]@{Key = $_.Key; Dir = $_.Value} } |
-            Format-Table -AutoSize | Out-Host
+            [PSCustomObject]@{Key = $_.Key; Dir = $_.Value } } |
+        Format-Table -AutoSize | Out-Host
 
         [Microsoft.PowerShell.PSConsoleReadLine]::InvokePrompt()
     }
