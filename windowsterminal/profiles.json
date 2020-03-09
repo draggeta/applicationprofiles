@@ -6,12 +6,12 @@
     "$schema": "https://aka.ms/terminal-profiles-schema",
 
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
-
-    "profiles":
-    {
-        "defaults":
-        {
+    "profiles": {
+        "defaults": {
             // Put settings here that you want to apply to all profiles
+            "fontFace": "Cascadia Code PL",
+            "useAcrylic": true,
+            "acrylicOpacity": 0.9
         },
         "list":
         [
