@@ -4,13 +4,23 @@ using namespace System.Management.Automation.Language
 Import-Module posh-git
 Import-Module oh-my-posh
 
+# Environment Variables
+$env:DOCUMENTS = [Environment]::GetFolderPath([Environment+SpecialFolder]::MyDocuments)
+
+# Appearance
 $ThemeSettings.CurrentUser = "Tony"
 # https://github.com/JanDeDobbeleer/oh-my-posh
 Set-Theme Paradox # Agnoster, Paradox, Sorin
 
-$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
-if (Test-Path($ChocolateyProfile)) {
-    Import-Module "$ChocolateyProfile"
+# Aliases
+Set-Alias -Name which -Value Get-Command
+
+# Autocompletion
+if ($IsWindows) {
+    $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
+    if (Test-Path($ChocolateyProfile)) {
+        Import-Module "$ChocolateyProfile"
+    }
 }
 
 if (($host.Name -eq 'ConsoleHost') -or ($host.Name -eq 'Visual Studio Code Host')) {
