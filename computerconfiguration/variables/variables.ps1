@@ -99,14 +99,39 @@ $softwareListInstallArgs = @{
 
 # PowerShell
 $psModuleList = @(
-    'InvokeBuild'
-    'Pester'
-    'platyPS'
-    'oh-my-posh'
-    'posh-git'
-    'Az'
-    'AWS.Tools.Common'
-    'AWS.Tools.Installer'
+    @{
+        Name  = "InvokeBuild"
+        Scope = "CurrentUser"
+    },
+    @{
+        Name  = "oh-my-posh"
+        Scope = "CurrentUser"
+    },
+    @{
+        Name               = "Pester"
+        Scope              = "CurrentUser"
+        SkipPublisherCheck = $true
+    },
+    @{
+        Name  = "platyPS"
+        Scope = "CurrentUser"
+    },
+    @{
+        Name  = "posh-git"
+        Scope = "CurrentUser"
+    },
+    @{
+        Name  = "Az"
+        Scope = "CurrentUser"
+    },
+    @{
+        Name  = "AWS.Tools.Common"
+        Scope = "CurrentUser"
+    },
+    @{
+        Name  = "AWS.Tools.Installer"
+        Scope = "CurrentUser"
+    }
 )
 
 # VSCode
