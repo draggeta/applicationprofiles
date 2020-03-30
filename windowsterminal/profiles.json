@@ -8,15 +8,14 @@
             // Put settings here that you want to apply to all profiles
             "fontFace": "Cascadia Code PL",
             "useAcrylic": true,
-            "acrylicOpacity": 0.9
+            "acrylicOpacity": 0.8
         },
         "list": [
             {
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
                 "name": "PowerShell",
-                "source": "Windows.Terminal.PowershellCore",
-                "fontFace": "Cascadia Code PL"
+                "source": "Windows.Terminal.PowershellCore"
             },
             {
                 // Make changes here to the powershell.exe profile
