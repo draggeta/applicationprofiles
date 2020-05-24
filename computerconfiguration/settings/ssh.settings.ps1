@@ -6,5 +6,5 @@ $service = Get-Service -Name ssh-agent
 
 if ($service.StartupType -eq 'Disabled') {
     Set-Service -Name ssh-agent -StartupType Automatic
-    start-service -Name ssh-agent
+    Start-Service -Name ssh-agent
 }

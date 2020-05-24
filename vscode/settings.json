@@ -73,16 +73,24 @@
     // Enable/disable navigation breadcrumbs
     "breadcrumbs.enabled": true,
     //Python
+    "python.analysis.memory.keepLibraryAst": true,
+    "python.analysis.memory.keepLibraryLocalVariables": true,
     // Provider for formatting. Possible options include 'autopep8', 'black', and 'yapf'.
     "python.formatting.provider": "black",
-    // Whether to lint Python files using pep8
-    "python.linting.pycodestyleEnabled": true,
-    // Path to pep8, you can use a custom version of pep8 by modifying this setting to include the full path.
-    "python.linting.pycodestylePath": "pycodestyle",
+    "python.formatting.blackPath": "~/AppData/Roaming/Python/Python38/Scripts/black.exe",
+    "python.jediEnabled": false,
+    "python.linting.banditEnabled": true,
+    "python.linting.banditPath": "~/AppData/Roaming/Python/Python38/Scripts/bandit.exe",
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Path": "~/AppData/Roaming/Python/Python38/Scripts/flake8.exe",
     // Whether to run Pylint with minimal set of rules.
     "python.linting.pylintUseMinimalCheckers": false,
+    "python.linting.pylintPath": "~/AppData/Roaming/Python/Python38/Scripts/pylint.exe",
+    "python.terminal.activateEnvInCurrentTerminal": true,
     // Enable unit testing using pytest.
     "python.testing.pytestEnabled": true,
+    "python.testing.pytestPath": "~/AppData/Roaming/Python/Python38/Scripts/pytest.exe",
+    "python.venvPath": "~/.venv",
     // Go configuration
     "go.autocompleteUnimportedPackages": true,
     // Feature level setting to enable/disable code lens for references and run/debug tests

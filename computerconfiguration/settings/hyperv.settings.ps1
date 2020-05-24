@@ -6,3 +6,7 @@ $members = Get-LocalGroupMember -Group "Hyper-V Administrators"
 if ("$env:userdomain\$env:username" -notin $members.Name) {
     Add-LocalGroupMember -Group "Hyper-V Administrators" -Member $env:username
 }
+
+# Set default Hyper-V VM folder
+Set-VMHost -VirtualMachinePath "$env:SYSTEMDRIVE\Hyper-V" `
+    -VirtualHardDiskPath "$env:SYSTEMDRIVE\Hyper-V\Virtual Hard Disks"

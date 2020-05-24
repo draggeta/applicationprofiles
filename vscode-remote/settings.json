@@ -1,0 +1,7 @@
+{
+    "python.formatting.blackPath": "~/.local/bin/black",
+    "python.linting.banditPath": "~/.local/bin/bandit",
+    "python.linting.flake8Path": "~/.local/bin/flake8",
+    "python.linting.pylintPath": "~/.local/bin/pylint",
+    "python.testing.pytestPath": "~/.local/bin/pytest"
+}

@@ -41,7 +41,9 @@
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": false,
                 "name": "Ubuntu",
-                "source": "Windows.Terminal.Wsl"
+                "source": "Windows.Terminal.Wsl",
+                // https://github.com/microsoft/terminal/issues/592#issuecomment-504947429
+                "commandline": "wsl.exe ~ -d Ubuntu"
             }
         ]
     },
@@ -137,15 +139,13 @@
                 "alt+shift+-"
             ]
         },
-        // This is the only custom one. The rest are default and serve
-        // only as reminders.
         {
             "command": {
                 "action": "splitPane",
                 "split": "vertical"
             },
             "keys": [
-                "alt+shift+="
+                "alt+shift+plus"
             ]
         }
     ]
