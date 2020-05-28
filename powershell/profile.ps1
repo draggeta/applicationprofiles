@@ -8,9 +8,9 @@ Import-Module oh-my-posh
 $env:DOCUMENTS = [Environment]::GetFolderPath([Environment+SpecialFolder]::MyDocuments)
 
 # Appearance
-$ThemeSettings.CurrentUser = "Tony"
 # https://github.com/JanDeDobbeleer/oh-my-posh
 Set-Theme Paradox # Agnoster, Paradox, Sorin
+$ThemeSettings.CurrentUser = "tony"
 
 # Aliases
 Set-Alias -Name which -Value Get-Command

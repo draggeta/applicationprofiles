@@ -3,6 +3,7 @@ Write-Output "### Personalization"
 # Set Explorer settings
 Write-Output "Setting File Explorer preferences"
 $explorerSettings = @{
+    AutoCheckSelect   = 0     # Hide selection box
     Hidden            = 1     # Show hidden items
     HideFileExt       = 0     # Show file extensions
     SeparateProcess   = 1     # Open Explorer windows in separate process
@@ -24,7 +25,7 @@ foreach ($item in $personalizeSettings.GetEnumerator()) {
 # Accent color
 Write-Output "Setting Desktop preferences"
 $accentColorSettings = @{
-    AutoColorization  = 0     # Automatically change accent color depending on background
+    AutoColorization = 0     # Automatically change accent color depending on background
 }
 $colorRegistryKeyPath = "HKCU:\Control Panel\Desktop"
 foreach ($item in $accentColorSettings.GetEnumerator()) {
@@ -33,7 +34,7 @@ foreach ($item in $accentColorSettings.GetEnumerator()) {
 
 # Desktop Window Manager colors
 $dwmColorSettings = @{
-    ColorPrevalence  = 1     # Show accent color on title bars and window borders
+    ColorPrevalence = 1     # Show accent color on title bars and window borders
 }
 $colorRegistryKeyPath = "HKCU:\Software\Microsoft\Windows\DWM"
 foreach ($item in $dwmColorSettings.GetEnumerator()) {

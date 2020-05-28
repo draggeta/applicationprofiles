@@ -127,6 +127,10 @@ fi
 # prompt settings
 force_color_prompt=yes
 
+if [[ ! -d "${GOPATH}/src/github.com/justjanne/powerline-go" ]]; then
+    go get github.com/justjanne/powerline-go
+fi
+
 function _update_ps1() {
     # go get -u github.com/justjanne/powerline-go
     # remove root from modules to remove duplicate prompt
