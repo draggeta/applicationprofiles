@@ -11,7 +11,6 @@ $enabledOptionalFeatureList = @(
     'Microsoft-Hyper-V-All'
     'Microsoft-Windows-Subsystem-Linux'
     'VirtualMachinePlatform'
-    # 'Windows-Defender-ApplicationGuard'
 )
 
 # Windows Capabilities
