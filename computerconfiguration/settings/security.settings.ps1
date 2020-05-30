@@ -16,7 +16,6 @@ if ((Get-ItemPropertyValue $mpRegistryKeyPath -Name TamperProtection) -lt 1) {
     Set-ItemProperty -Path $mpRegistryKeyPath -Name "TamperProtection" -Value 5
 }
 
-
 # Virtualization based security (Core Isolation/Memory Integrity)
 Write-Output "Enabling core isolation"
 $vbsRegistryKeyPath = "HKLM:\SYSTEM\CurrentControlSet\Control\DeviceGuard\Scenarios"
