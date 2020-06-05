@@ -22,7 +22,6 @@ $enabledCapabilityList = @(
     'OpenSSH.Server~~~~0.0.1.0'
 )
 
-
 # Chocolatey
 $softwareList = @(
     '7zip'

@@ -88,6 +88,7 @@ $vscodeExtensionList = @(
     'Equinusocio.vsc-material-theme'
     'mauve.terraform'
     'ms-python.python'
+    'ms-azuretools.vscode-docker'
     'ms-vscode.Go'
     'ms-vscode.powershell'
     'ms-vscode-remote.vscode-remote-extensionpack'

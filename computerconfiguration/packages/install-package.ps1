@@ -20,7 +20,6 @@ foreach ($capability in $enabledCapabilityList) {
     Add-WindowsCapability -Online -Name $capability > $null
 }
 
-
 # SOFTWARE
 # Install Chocolatey
 Write-Output "Installing Chocolatey"
@@ -33,7 +32,7 @@ if ($sig.Status -eq 'Valid' -and $sig.SignerCertificate.Subject -like "*O=`"Choc
 }
 
 Write-Output "Installing software"
-choco install -y $softwareList > $null
+choco install -y $softwareList
 
 foreach ($item in $softwareListInstallArgs.GetEnumerator()) {
     choco install -y $item.Key --install-arguments="$($item.Value)" > $null
