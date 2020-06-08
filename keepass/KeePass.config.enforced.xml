@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Configuration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<Meta MergeNodeMode="Remove" MergeContentMode="Replace">
+	<Meta>
 		<OmitItemsWithDefaultValues>true</OmitItemsWithDefaultValues>
-		<DpiFactorX>1</DpiFactorX>
-		<DpiFactorY>1</DpiFactorY>
 	</Meta>
 	<Security>
-		<WorkspaceLocking MergeNodeMode="Remove" MergeContentMode="Replace">
+		<WorkspaceLocking>
 			<LockOnSessionSwitch>true</LockOnSessionSwitch>
 			<LockOnSuspend>true</LockOnSuspend>
 			<LockAfterTime>0</LockAfterTime>
@@ -20,7 +18,7 @@
 		<MasterKeyOnSecureDesktop>true</MasterKeyOnSecureDesktop>
 	</Security>
 	<PasswordGenerator>
-		<UserProfiles MergeNodeMode="Remove" MergeContentMode="Replace">
+		<UserProfiles>
 			<Profile>
 				<Name>16 - alphanumeric</Name>
 				<GeneratorType>CharSet</GeneratorType>
