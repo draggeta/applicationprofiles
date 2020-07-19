@@ -56,3 +56,11 @@ if (-not (Test-Path $vbsRegistryKeyPath)) {
 # Run Defender in a sandbox
 Write-Output "Running Defender in a sandbox"
 [System.Environment]::SetEnvironmentVariable('MP_FORCE_USE_SANDBOX', 1, [System.EnvironmentVariableTarget]::Machine)
+
+# Disable Autoplay
+$autoplayRegistryKeyPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers"
+if (-not (Test-Path $autoplayRegistryKeyPath)) {
+    New-Item -Path $autoplayRegistryKeyPath -Name "DisableAutoplay" -Value 1 -Force
+} else {
+    Set-ItemProperty -Path $autoplayRegistryKeyPath -Name "DisableAutoplay" -Value 1
+}
