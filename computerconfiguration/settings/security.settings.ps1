@@ -11,7 +11,7 @@ foreach ($process in $controlledFolderAccessProcesses) {
 
 # Enable blocking of Potentially Unwanted Applications
 Write-Output "Enabling blocking of PUAP"
-Set-MpPreference -PUAProtection $true
+Set-MpPreference -PUAProtection Enabled
 
 # Enable Block at first sight functionality
 Write-Output "Enabling tamper protection"

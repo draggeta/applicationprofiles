@@ -39,6 +39,11 @@ $dotfileList = @(
         target      = (Join-Path -Path $PSScriptRoot -ChildPath "../../powershell/profile.ps1" -Resolve)
     }
     @{
+        description = "Oh-My-Posh"
+        link        = "${env:USERPROFILE}\.oh-my-posh.omp.json"
+        target      = (Join-Path -Path $PSScriptRoot -ChildPath "../../powershell/.oh-my-posh.omp.json" -Resolve)
+    }
+    @{
         description = "WindowsPowerShell"
         link        = "$([Environment]::GetFolderPath([Environment+SpecialFolder]::MyDocuments))\WindowsPowerShell\Microsoft.PowerShell_profile.ps1"
         target      = (Join-Path -Path $PSScriptRoot -ChildPath "../../powershell/profile.ps1" -Resolve)
@@ -53,6 +58,10 @@ $psModuleList = @(
     },
     @{
         Name  = "oh-my-posh"
+        Scope = "CurrentUser"
+    },
+    @{
+        Name  = "Terminal-Icons"
         Scope = "CurrentUser"
     },
     @{

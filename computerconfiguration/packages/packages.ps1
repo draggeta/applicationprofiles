@@ -1,8 +1,12 @@
 # Windows Optional Features
 $removedOptionalFeatureList = @(
-    'SMB1Protocol'
+    'Internet-Explorer-Optional-amd64'
     'MicrosoftWindowsPowerShellV2'
     'MicrosoftWindowsPowerShellV2Root'
+    'Printing-Foundation-Features'
+    'Printing-XPSServices-Features'
+    'SMB1Protocol'
+    'WorkFolders-Client'
 )
 $enabledOptionalFeatureList = @(
     'Containers'
@@ -10,6 +14,7 @@ $enabledOptionalFeatureList = @(
     'HypervisorPlatform'
     'Microsoft-Hyper-V-All'
     'Microsoft-Windows-Subsystem-Linux'
+    'TelnetClient'
     'VirtualMachinePlatform'
 )
 
@@ -26,11 +31,14 @@ $enabledCapabilityList = @(
 $softwareList = @(
     '7zip'
     'azure-cli'
+    'azure-functions-core-tools-3'
     'cascadiafonts'
     'docker-desktop'
+    'drawio'
     'git'
     'git-credential-manager-for-windows'
     'golang'
+    'hugo'
     'firefox'
     'k-litecodecpackfull'
     'keepass'
@@ -48,6 +56,7 @@ $softwareList = @(
     'vault'
     'vscode'
     'wireshark'
+    'wsl2'
 )
 
 $softwareListInstallArgs = @{

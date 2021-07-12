@@ -9,8 +9,8 @@ $env:DOCUMENTS = [Environment]::GetFolderPath([Environment+SpecialFolder]::MyDoc
 
 # Appearance
 # https://github.com/JanDeDobbeleer/oh-my-posh
-Set-Theme Paradox # Agnoster, Paradox, Sorin
-$ThemeSettings.CurrentUser = "tony"
+Set-PoshPrompt -Theme "$env:USERPROFILE/.oh-my-posh.omp.json" # Agnoster, Paradox, Sorin
+Import-Module Terminal-Icons
 
 # Aliases
 Set-Alias -Name which -Value Get-Command

@@ -13,19 +13,20 @@ if (Test-Path $bitLockerRegistryKeyPath) {
     Set-ItemProperty -Path $bitLockerRegistryKeyPath -Name "FDVDenyWriteAccess" -Value 0
 }
 
-Write-Output "Switching Docker to Windows mode"
+Write-Output "Switching Docker to Linux in WSL2 mode"
 # Set docker to Windows mode instead of linux
-& "$env:ProgramFiles\Docker\Docker\DockerCli.exe" -SwitchWindowsEngine
+& "$env:ProgramFiles\Docker\Docker\DockerCli.exe" -SwitchLinuxEngine
 
-Write-Output "Enabling Docker experimental mode"
-# Enable experimental mode
-$daemonPath = Join-Path -Path $env:ProgramData -ChildPath "Docker\config\daemon.json"
-$daemon = @"
-{
-    "registry-mirrors": [],
-    "insecure-registries": [],
-    "debug": true,
-    "experimental": true
-}
-"@
-Set-Content -Path $daemonPath -Value $daemon
+# This isn't needed anymore with WSL2
+# Write-Output "Enabling Docker experimental mode"
+# # Enable experimental mode
+# $daemonPath = Join-Path -Path $env:ProgramData -ChildPath "Docker\config\daemon.json"
+# $daemon = @"
+# {
+#     "registry-mirrors": [],
+#     "insecure-registries": [],
+#     "debug": true,
+#     "experimental": true
+# }
+# "@
+# Set-Content -Path $daemonPath -Value $daemon
