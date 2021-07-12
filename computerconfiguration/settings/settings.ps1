@@ -30,8 +30,8 @@ $dotfileList = @(
     },
     @{
         description = "Windows Terminal"
-        link        = "$env:localappdata\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\profiles.json"
-        target      = (Join-Path -Path $PSScriptRoot -ChildPath "../../windowsterminal/profiles.json" -Resolve)
+        link        = "$env:localappdata\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
+        target      = (Join-Path -Path $PSScriptRoot -ChildPath "../../windowsterminal/settings.json" -Resolve)
     }
     @{
         description = "PowerShell"
