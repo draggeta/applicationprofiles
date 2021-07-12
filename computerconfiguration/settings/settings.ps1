@@ -10,7 +10,7 @@ $controlledFolderAccessProcesses = @(
 $dotfileList = @(
     @{
         description = "KeePass"
-        link        = "${env:ProgramFiles(x86)}\KeePass Password Safe 2\KeePass.config.enforced.xml"
+        link        = "${env:ProgramFiles}\KeePass Password Safe 2\KeePass.config.enforced.xml"
         target      = (Join-Path -Path $PSScriptRoot -ChildPath "../../keepass/KeePass.config.enforced.xml" -Resolve)
     },
     @{
