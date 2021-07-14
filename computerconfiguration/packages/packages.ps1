@@ -16,6 +16,7 @@ $enabledOptionalFeatureList = @(
     'Microsoft-Windows-Subsystem-Linux'
     'TelnetClient'
     'VirtualMachinePlatform'
+    'Windows-Defender-ApplicationGuard'
 )
 
 # Windows Capabilities
