@@ -11,6 +11,8 @@
     "editor.fontLigatures": true,
     // Format a file on save. A formatter must be available, the file must not be saved after delay, and the editor must not be shutting down.
     "editor.formatOnSave": true,
+    // Controls whether bracket pair guides are enabled or not. true, false (default), active
+    "editor.guides.bracketPairs": true,
     // Insert spaces when pressing Tab. This setting is overriden based on the file contents when `editor.detectIndentation` is on.
     "editor.insertSpaces": true,
     // Controls if the minimap is shown
@@ -45,8 +47,6 @@
     "window.restoreFullscreen": true,
     // Adjust the appearance of the window title bar. Changes require a full restart to apply.
     "window.titleBarStyle": "custom",
-    // Adjust the zoom level of the window. The original size is 0 and each increment above (e.g. 1) or below (e.g. -1) represents zooming 20% larger or smaller. You can also enter decimals to adjust the zoom level with a finer granularity.
-    "window.zoomLevel": 0,
     // Files
     // Controls auto save of dirty files. Accepted values:  "off", "afterDelay", "onFocusChange" (editor loses focus), "onWindowChange" (window loses focus). If set to "afterDelay", you can configure the delay in "files.autoSaveDelay".
     "files.autoSave": "afterDelay",
